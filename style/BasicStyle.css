@@ -1,0 +1,101 @@
+.header {
+    position: relative;
+    height: 60px;
+    border-bottom: 1px solid #ececec;
+}
+
+.header .ds-logo {
+    position: absolute;
+    background-image: url(../image/logo-dynamsoft-160x40.svg);
+    left: 37px;
+    top: 15px;
+    width: 120px;
+    height: 30px;
+}
+
+.header .sy-name {
+    position: absolute;
+    font: 16px bold;
+    left: 176px;
+    top: 23px;
+    color: #323232;
+}
+
+.left-bar {
+    position: relative;
+    width: 240px;
+    height: 100vh;
+    border: 1px solid #ececec;
+}
+
+.left-bar .linkImage {
+    display: inline-block;
+    width: 14px;
+    height: 14px;
+    margin-right: 16px;
+    background-image: url(../image/testIcon.svg);
+}
+
+.left-bar a:link{
+    text-decoration: none;
+    color: #606060;
+}
+
+.left-bar a:visited {
+    color: #606060;
+}
+
+.left-bar a:hover {
+    color: #f89c34;
+}
+
+.left-bar a:active {
+    color: #f89c34;
+}
+
+.left-bar ul .lb-title {
+    position: relative;
+    font-size: 14px;
+    margin: 50px 0 24px 38px;
+}
+
+.left-bar ul li {
+    position: relative;
+    font-size: 14px;
+    margin: 0 0 20px 38px;
+}
+
+.basic-main {
+    position: relative;
+    height: 100vh;
+    background: #F5F5F5;
+}
+
+.bm-header {
+    position: absolute;
+    height: 70px;
+    width: 100vw;
+    background: #fafafa;
+    border: 1px solid #ececec;
+}
+
+.bm-header .bm-title{
+    margin: 24px 0 0 32px;
+    font-size: 16px;
+    color: #323232;
+}
+
+.bm-content{
+    position: absolute;
+    display: inline-block;
+    left: 32px;
+    top: 103px;
+    width: 80vw;
+    height: 80vh;
+    border: 1px solid #ececec;
+    background: #FFFFFF;
+}
+
+
+
+
