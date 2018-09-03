@@ -206,29 +206,60 @@
 .rd-product {
     position: relative;
     display: inline-block;
+    vertical-align: text-top;
+    padding: 0 0 0 8px;
+    width: 225px;
+    font-size: 14px;
+    border-radius: 4px;
+    border: 1px solid #dddddd;
+    background: #EEEEEE;
+    color: #888888;
+    line-height: 30px;
 }
 
 .rd-drop-button {
     height: 30px;
-    width: 225px;
-    font-size: 14px;
-    border-radius: 3px;
-    border: 1px solid #dddddd;
-    background: #EEEEEE;
-    color: #888888;
+}
+
+.rd-drop-button{
+    position: relative;
+    text-align: start;
+}
+
+.rd-drop-button:after{
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    width: 0;
+    height: 0;
+    content: '';
+    border: 6px solid transparent;
+    border-top-color: #606060;
 }
 
 .rd-drop-list{
     display: none;
-    position: absolute;
     background: #EEEEEE;
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-    padding: 2px 8px;
+}
+
+.rd-drop-list li {
+    height: 30px;
+}
+
+.rd-drop-list li:hover{
+    background: #BBBBBB;
 }
 
 .rd-product:hover .rd-drop-list{
     display: block;
 }
+
+.rd-product:hover .rd-drop-button:after{
+    top: 5px;
+    border: 6px solid transparent;
+    border-bottom-color: #606060;
+}
+
 
 
 
