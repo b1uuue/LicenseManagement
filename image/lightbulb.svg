@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 22.1.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="图层_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 555 555" style="enable-background:new 0 0 555 555;" xml:space="preserve">
+<style type="text/css">
+	.st0{fill:#F5A93C;}
+	.st1{clip-path:url(#SVGID_2_);fill:#FFFFFF;}
+</style>
+<circle class="st0" cx="277.5" cy="277.5" r="277.5"/>
+<g>
+	<g>
+		<defs>
+			<rect id="SVGID_1_" x="15" y="-31" width="477.8" height="683.8"/>
+		</defs>
+		<clipPath id="SVGID_2_">
+			<use xlink:href="#SVGID_1_"  style="overflow:visible;"/>
+		</clipPath>
+		<path class="st1" d="M282,83.1c-74,0-133.9,60-133.9,133.9c0,45.5,22.8,85.5,57.4,109.8v43.2c0,10.6,8.6,19.1,19.1,19.1h114.8
+			c10.6,0,19.1-8.6,19.1-19.1v-43.2c34.6-24.3,57.4-64.3,57.4-109.8C415.9,143.1,356,83.1,282,83.1 M224.6,446.7
+			c0,10.6,8.6,19.1,19.1,19.1h76.5c10.6,0,19.1-8.6,19.1-19.1v-19.1H224.6V446.7z M224.6,446.7"/>
+	</g>
+</g>
+</svg>
