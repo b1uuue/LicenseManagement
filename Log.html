@@ -1,20 +1,39 @@
-<link rel="stylesheet" href="style/Reset.css">
-<link rel="stylesheet" href="style/BasicStyle.css">
-
-<div class="basic-main" id="Log">
-    <div class="bm-header">
-        <span class="bm-title">Log</span>
-    </div>
-    <div class="log">
-        <div class="bm-content">
-            <div class="log-display">
-                <div class="log-display-content">Display Log</div>
-            </div>
-            <div class="log-control">
-                <input type="text" class="log-export-path" value="Select an export path">
-                <div class="white-btn" id="LogChoosePath">Choose Path</div>
-                <div class="yellow-btn" id="LogExport">Export</div>
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Log</title>
+    <link rel="stylesheet" href="style/Reset.css">
+    <link rel="stylesheet" href="style/BasicStyle.css">
+</head>
+<body>
+<div id="Header"></div>
+<div class="main">
+    <div class="main-container">
+        <div id="LeftBar" style="display: inline-block; width: 240px; height: 100%; vertical-align: top;"></div
+        ><div class="basic-main">
+        <div class="bm-header">
+            <span class="bm-title">Log</span>
+        </div>
+        <div class="log">
+            <div class="bm-content">
+                <div class="log-display">
+                    <div class="log-display-content">Display Log</div>
+                </div>
+                <div class="log-control">
+                    <input type="text" class="log-export-path" value="Select an export path">
+                    <div class="white-btn" id="LogChoosePath">Choose Path</div>
+                    <div class="yellow-btn" id="LogExport">Export</div>
+                </div>
             </div>
         </div>
     </div>
+    </div>
 </div>
+<script src="script/jquery-1.12.4.min.js"></script>
+<script>
+    $('#Header').load('header.html');
+    $('#LeftBar').load('leftBar.html')
+</script>
+</body>
+</html>
+

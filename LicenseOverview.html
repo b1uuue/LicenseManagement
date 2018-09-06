@@ -9,8 +9,8 @@
 <div id="Header"></div>
 <div class="main">
     <div class="main-container">
-        <div id="LeftBar"></div>
-        <div class="basic-main" id="LicenseOverview">
+        <div id="LeftBar" style="display: inline-block; width: 240px; height: 100%; vertical-align: top;"></div
+        ><div class="basic-main">
             <div class="bm-header">
                 <span class="bm-title">License Overview</span>
             </div>
@@ -69,19 +69,18 @@
                         </table>
                     </div>
                     <div class="page-control">
-                        <input id="PCPage" class="pc-page" type="text" value="page">
-                        <input type="button" id="PCGo" class="pc-go" value="go">
-                        <input type="button" id="PCBack" class="pc-back" value="<">
+                        <input id="PCPage" class="pc-page" type="number" placeholder="page">
+                        <button id="PCGo" class="pc-go" >go</button>
+                        <button id="PCBack" class="pc-back"></button>
                         <span class="pc-page-current">2</span><span class="pc-page-divide">/</span><span
                             class="pc-page-total">10</span>
-                        <input type="button" id="PCNext" class="pc-next" value=">">
+                        <button id="PCNext" class="pc-next"></button>
                     </div>
                 </div>
             </div>
         </div>
     </div>
 </div>
-
 <script src="script/jquery-1.12.4.min.js"></script>
 <script>
     $('#Header').load('header.html');

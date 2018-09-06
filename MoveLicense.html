@@ -1,45 +1,66 @@
-<link rel="stylesheet" href="style/Reset.css">
-<link rel="stylesheet" href="style/BasicStyle.css">
-
-<div class="basic-main" id="MoveLicense">
-    <div class="bm-header">
-        <span class="bm-title">Move License</span>
-    </div>
-    <div class="move-license">
-        <div class="bm-content">
-            <div class="ml-note">
-                <span class="title-note">Please select a license key</span>
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Move License</title>
+    <link rel="stylesheet" href="style/Reset.css">
+    <link rel="stylesheet" href="style/BasicStyle.css">
+</head>
+<body>
+<div id="Header"></div>
+<div class="main">
+    <div class="main-container">
+        <div id="LeftBar" style="display: inline-block; width: 240px; height: 100%; vertical-align: top;"></div
+        ><div class="basic-main" id="MoveLicense">
+            <div class="bm-header">
+                <span class="bm-title">Move License</span>
             </div>
-            <div class="ml-license-select" id="MLLicense">
-                <div class="ml-drop-button">xxxx-xxxxxxxx-xxxxx-xxxxxxxx</div>
-                <ul class="ml-drop-list">
-                    <li>xxxx-xxxxxxxx-xxxxx-xxxxxxxx</li>
-                    <li>xxxx-xxxxxxxx-xxxxx-xxxxxxxx</li>
-                    <li>xxxx-xxxxxxxx-xxxxx-xxxxxxxx</li>
-                    <li>xxxx-xxxxxxxx-xxxxx-xxxxxxxx</li>
-                </ul>
-            </div>
-            <div class="ml-card">
-                <div class="card">
-                    <div class="ml-key">
-                        <span>License Key:</span>
-                        <span class="ml-card-key" id="MLCardKey">xxxx-xxxxxxxx-xxxxx-xxxxxxxx</span>
+            <div class="move-license">
+                <div class="bm-content">
+                    <div class="ml-note">
+                        <span class="title-note">Please select a license key</span>
                     </div>
-                    <div class="ml-date">
-                        <span>Expiration Date:</span>
-                        <span class="ml-card-date" id="MLCardDate">xxxx-xx-xx</span>
+                    <div class="ml-license-select" id="MLLicense">
+                        <div class="ml-drop-button">xxxx-xxxxxxxx-xxxxx-xxxxxxxx</div>
+                        <ul class="ml-drop-list">
+                            <li>xxxx-xxxxxxxx-xxxxx-xxxxxxxx</li>
+                            <li>xxxx-xxxxxxxx-xxxxx-xxxxxxxx</li>
+                            <li>xxxx-xxxxxxxx-xxxxx-xxxxxxxx</li>
+                            <li>xxxx-xxxxxxxx-xxxxx-xxxxxxxx</li>
+                        </ul>
                     </div>
-                    <div class="ml-type">
-                        <span>Product and Type:</span>
-                        <span class="ml-card-type" id="MLCardType">DBR Development License</span>
+                    <div class="ml-card">
+                        <div class="card">
+                            <div class="ml-key">
+                                <span>License Key:</span>
+                                <span class="ml-card-key" id="MLCardKey">xxxx-xxxxxxxx-xxxxx-xxxxxxxx</span>
+                            </div>
+                            <div class="ml-date">
+                                <span>Expiration Date:</span>
+                                <span class="ml-card-date" id="MLCardDate">xxxx-xx-xx</span>
+                            </div>
+                            <div class="ml-type">
+                                <span>Product and Type:</span>
+                                <span class="ml-card-type" id="MLCardType">DBR Development License</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="ml-unbind">
+                        <button class="white-btn" id="MLUnbindBtn">Unbind from this server</button>
+                        <div class="ml-unbind-bulb"></div>
+                        <div class="ml-unbind-note">Note: Network mandatory</div>
                     </div>
                 </div>
-            </div>
-            <div class="ml-unbind">
-                <button class="white-btn" id="MLUnbindBtn">Unbind from this server</button>
-                <div class="ml-unbind-bulb"></div>
-                <div class="ml-unbind-note">Note: Network mandatory</div>
             </div>
         </div>
     </div>
 </div>
+<script src="script/jquery-1.12.4.min.js"></script>
+<script>
+    $('#Header').load('header.html');
+    $('#LeftBar').load('leftBar.html')
+</script>
+</body>
+</html>
+
+
+
