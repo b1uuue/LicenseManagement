@@ -1,70 +1,92 @@
-<link rel="stylesheet" href="style/Reset.css">
-<link rel="stylesheet" href="style/BasicStyle.css">
-
-<div class="basic-main" id="LicenseOverview">
-    <div class="bm-header">
-        <span class="bm-title">License Overview</span>
-    </div>
-    <div class="bm-content">
-        <div class="license-overview-count">
-            <span class="lo-total">Total activate licenses:</span>
-            <span class="lo-total-number">30</span>
+<!DOCTYPE html>
+<html>
+<head>
+    <title>License overview</title>
+    <link rel="stylesheet" href="style/Reset.css">
+    <link rel="stylesheet" href="style/BasicStyle.css">
+</head>
+<body>
+<div id="Header"></div>
+<div class="main">
+    <div class="main-container">
+        <div id="LeftBar"></div>
+        <div class="basic-main" id="LicenseOverview">
+            <div class="bm-header">
+                <span class="bm-title">License Overview</span>
+            </div>
+            <div class="license-overview">
+                <div class="bm-content">
+                    <div class="license-overview-count">
+                        <span class="title-note">Total activate licenses:</span>
+                        <span class="title-note" id="LOTotalNumber">30</span>
+                    </div>
+                    <div class="license-overview-form">
+                        <table class="form">
+                            <tbody>
+                            <tr class="form-head">
+                                <td>License Key</td>
+                                <td>Quota</td>
+                                <td>Used</td>
+                                <td>Product and Type</td>
+                                <td>Expiration Date</td>
+                            </tr>
+                            <tr class="form-body">
+                                <td>justtesttextinthisline</td>
+                                <td>800</td>
+                                <td>90</td>
+                                <td>dbr development</td>
+                                <td>2018-01-23</td>
+                            </tr>
+                            <tr class="form-body">
+                                <td>justtesttextinthisline</td>
+                                <td>800</td>
+                                <td>90</td>
+                                <td>dbr development</td>
+                                <td>2018-01-23</td>
+                            </tr>
+                            <tr class="form-body">
+                                <td>justtesttextinthisline</td>
+                                <td>800</td>
+                                <td>90</td>
+                                <td>dbr development</td>
+                                <td>2018-01-23</td>
+                            </tr>
+                            <tr class="form-body">
+                                <td>justtesttextinthisline</td>
+                                <td>800</td>
+                                <td>90</td>
+                                <td>dbr development</td>
+                                <td>2018-01-23</td>
+                            </tr>
+                            <tr class="form-body">
+                                <td>justtesttextinthisline</td>
+                                <td>800</td>
+                                <td>90</td>
+                                <td>dbr development</td>
+                                <td>2018-01-23</td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="page-control">
+                        <input id="PCPage" class="pc-page" type="text" value="page">
+                        <input type="button" id="PCGo" class="pc-go" value="go">
+                        <input type="button" id="PCBack" class="pc-back" value="<">
+                        <span class="pc-page-current">2</span><span class="pc-page-divide">/</span><span
+                            class="pc-page-total">10</span>
+                        <input type="button" id="PCNext" class="pc-next" value=">">
+                    </div>
+                </div>
+            </div>
         </div>
-        <div class="license-overview-form">
-            <table>
-                <tbody>
-                <tr class="lo-form-head">
-                    <td>License Key</td>
-                    <td>Quota</td>
-                    <td>Used</td>
-                    <td>Product and Type</td>
-                    <td>Expiration Date</td>
-                </tr>
-                <tr class="lo-form-body">
-                    <td>justtesttextinthisline</td>
-                    <td>800</td>
-                    <td>90</td>
-                    <td>dbr development</td>
-                    <td>2018-01-23</td>
-                </tr>
-                <tr class="lo-form-body">
-                    <td>justtesttextinthisline</td>
-                    <td>800</td>
-                    <td>90</td>
-                    <td>dbr development</td>
-                    <td>2018-01-23</td>
-                </tr>
-                <tr class="lo-form-body">
-                    <td>justtesttextinthisline</td>
-                    <td>800</td>
-                    <td>90</td>
-                    <td>dbr development</td>
-                    <td>2018-01-23</td>
-                </tr>
-                <tr class="lo-form-body">
-                    <td>justtesttextinthisline</td>
-                    <td>800</td>
-                    <td>90</td>
-                    <td>dbr development</td>
-                    <td>2018-01-23</td>
-                </tr>
-                <tr class="lo-form-body">
-                    <td>justtesttextinthisline</td>
-                    <td>800</td>
-                    <td>90</td>
-                    <td>dbr development</td>
-                    <td>2018-01-23</td>
-                </tr>
-                </tbody>
-            </table>
-        </div>
-        <div class="page-control">
-            <input id="PCPage" class="pc-page" type="text" value="page">
-            <input type="button" id="PCGo" class="pc-go" value="go">
-            <input type="button" id="PCBack" class="pc-back" value="<">
-            <span class="pc-page-current">2</span><span class="pc-page-divide">/</span><span class="pc-page-total">10</span>
-            <input type="button" id="PCNext" class="pc-next" value=">">
-        </div>
-
     </div>
 </div>
+
+<script src="script/jquery-1.12.4.min.js"></script>
+<script>
+    $('#Header').load('header.html');
+    $('#LeftBar').load('leftBar.html')
+</script>
+</body>
+</html>
+

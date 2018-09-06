@@ -3,27 +3,62 @@
     border-bottom: 1px solid #ececec;
 }
 
-.write-btn{
+.white-btn {
     display: inline-block;
     vertical-align: middle;
     border: 2px solid #aaaaaa;
-    border-radius:3px;
-    padding: 10px 25px;
+    border-radius: 3px;
+    padding: 9px 25px;
     background: #ffffff;
     color: #444444;
     font-size: 14px;
+    text-align: center;
 }
 
 .yellow-btn {
     display: inline-block;
     vertical-align: middle;
     height: 36px;
-    border: 1px solid;
-    border-radius:3px;
+    border: 1px solid #ffae38;
+    border-radius: 3px;
     padding: 10px 25px;
     background: #ffae38;
     color: #ffffff;
     font-size: 14px;
+    text-align: center;
+}
+
+.title-note{
+    margin-left: 20px;
+    font-size: 18px;
+    color: #323232;
+}
+
+
+.form {
+    width: 100%;
+}
+
+.form td {
+    font-size: 14px;
+    color: #444444;
+    border-bottom: 1px solid #d9d9d9;
+    padding: 18px 0;
+    text-align: left;
+}
+
+.form-head td {
+    padding-bottom: 10px;
+    color: #888888;
+}
+
+.card {
+    padding: 10px 0 10px 20px;
+    border: 1px solid #DDDDDD;
+    border-radius: 3px;
+    font-size: 14px;
+    color: #606060;
+    background: #f5f5f5;
 }
 
 .header-container {
@@ -65,6 +100,7 @@
 
 .left-bar {
     position: relative;
+    display: inline-block;
     width: 240px;
     height: 100vh;
     border: 1px solid #ececec;
@@ -110,6 +146,7 @@
 
 .basic-main {
     position: relative;
+    display: inline-block;
     width: 960px;
     height: 100vh;
     background: #F5F5F5;
@@ -146,25 +183,10 @@
     line-height: 70px;
 }
 
-.lo-total {
-    margin-left: 20px;
-}
 
 .license-overview-form {
     margin: 15px 20px 0 20px;
     width: 856px;
-}
-
-.license-overview-form td {
-    padding: 20px 96px 20px 0;
-    border-bottom: 1px solid #d9d9d9;
-    font-size: 12px;
-    color: #444444;
-}
-
-.lo-form-head td {
-    color: #888888;
-    padding-bottom: 10px;
 }
 
 .page-control {
@@ -248,12 +270,8 @@
     line-height: 70px;
 }
 
-.rd-total {
-    margin-left: 20px;
-}
-
 .rd-filter {
-    margin: 0 10px 0 245px;
+    margin: 0 10px 0 215px;
     font-size: 14px;
 }
 
@@ -320,18 +338,6 @@
     width: 856px;
 }
 
-.register-devices-form td {
-    padding: 20px 96px 20px 0;
-    border-bottom: 1px solid #d9d9d9;
-    font-size: 12px;
-    color: #444444;
-}
-
-.rd-form-head td {
-    color: #888888;
-    padding-bottom: 10px;
-}
-
 #MoveLicense .bm-content {
     height: 325px;
 }
@@ -340,7 +346,7 @@
     height: 70px;
     font: 18px bold;
     color: #323232;
-    padding: 30px 0 10px 20px;
+    padding: 30px 0 10px 0;
 }
 
 .ml-license-select {
@@ -354,44 +360,37 @@
     color: #999999;
 }
 
-.ml-drop-button{
-    
+.ml-drop-button {
+
 }
 
 .ml-drop-list {
     display: none;
 }
 
-.ml-card {
-    margin: 20px 0 10px 20px;
+.ml-card{
+    margin: 20px 0 0 20px;
     width: 495px;
     height: 95px;
-    padding: 10px 0 10px 20px;
-    border: 1px solid #DDDDDD;
-    border-radius: 3px;
-    font-size: 13px;
-    color: #606060;
-    background: #f5f5f5;
 }
 
-.ml-key{
+.ml-key {
     padding: 6px 0;
 }
 
-.ml-date{
+.ml-date {
     padding: 6px 0;
 }
 
-.ml-type{
+.ml-type {
     padding: 6px 0;
 }
 
-.ml-unbind{
+.ml-unbind {
     margin: 40px 0 0 20px;
 }
 
-
-.ml-unbind-bulb{
+.ml-unbind-bulb {
     display: inline-block;
     vertical-align: middle;
     background-image: url(../image/lightbulb.svg);
@@ -400,13 +399,98 @@
     margin: 0 9px 0 15px;
 }
 
-.ml-unbind-note{
+.ml-unbind-note {
     display: inline-block;
     vertical-align: middle;
     color: #888888;
     font-size: 14px;
 }
 
+#log .bm-content {
+    height: 530px;
+}
+
+.log-display {
+    height: 430px;
+    border-bottom: 1px solid #DDDDDD;
+}
+
+.log-display-content {
+    position: relative;
+    width: 200px;
+    margin: auto;
+    top: 50%;
+    color: #CCCCCC;
+    font-size: 18px;
+}
+
+.log-export-path {
+    margin: 30px 0 0 30px;
+    height: 35px;
+    width: 320px;
+    border-radius: 3px;
+    border: 1px solid #DDDDDD;
+    padding-left: 18px;
+    color: #999999;
+    font-size: 14px;
+}
+
+#LogChoosePath {
+    margin: 0 16px 0 8px;
+}
+
+#Network .bm-content {
+    height: 380px;
+}
+
+.net-proxy {
+    height: 70px;
+    border-bottom: 1px solid #DDDDDD;
+    line-height: 70px;
+}
+
+.net-proxy-btn {
+    display: inline-block;
+    margin-left: 580px;
+}
+
+.net-information {
+    padding: 15px 0 0 60px;
+}
+
+.info {
+    padding-top: 15px;
+}
+
+.info span {
+    display: inline-block;
+    width: 115px;
+    font-size: 16px;
+    color: #606060;
+}
+
+.info input {
+    height: 36px;
+    width: 325px;
+    padding-left: 18px;
+    border-radius: 3px;
+    border: 1px solid #DDDDDD;
+    color: #999999;
+    font-size: 14px;
+}
+
+.net-submit {
+    padding: 25px 0 0 179px;
+}
+
+.net-submit .white-btn {
+    margin-right: 30px;
+    width: 170px;
+}
+
+.net-submit .yellow-btn {
+    width: 120px;
+}
 
 
 
