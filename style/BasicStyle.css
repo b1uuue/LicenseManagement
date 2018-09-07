@@ -28,12 +28,11 @@
     text-align: center;
 }
 
-.title-note{
+.title-note {
     margin-left: 20px;
     font-size: 18px;
     color: #323232;
 }
-
 
 .form {
     width: 100%;
@@ -53,15 +52,104 @@
 }
 
 .card {
-    padding: 10px 0 10px 20px;
+    width: 100%;
     border: 1px solid #DDDDDD;
     border-radius: 3px;
     font-size: 14px;
-    color: #606060;
+    color: #888888;
     background: #f5f5f5;
 }
 
-.header{
+.notice-bulb {
+    display: inline-block;
+    margin: 12px 0 0 12px;
+    background-image: url(../image/lightbulb.svg);
+    height: 20px;
+    width: 20px;
+}
+
+.card .paragraph {
+    display: inline-block;
+    vertical-align: top;
+    margin: 12px 0 0 10px;
+    line-height: 20px;
+}
+
+.info {
+    padding-top: 15px;
+}
+
+.info span {
+    display: inline-block;
+    width: 115px;
+    font-size: 16px;
+    color: #606060;
+}
+
+.info input {
+    padding: 8px 0 8px 18px;
+    border-radius: 3px;
+    border: 1px solid #DDDDDD;
+    color: #999999;
+    font-size: 14px;
+}
+
+.check-enable {
+    display: inline-block;
+    vertical-align: top;
+    height: 210px;
+    width: 260px;
+    border-radius: 8px;
+    background: #ecf6ff;
+    color: #258EFB;
+}
+
+.check-disable {
+    display: inline-block;
+    vertical-align: top;
+    height: 210px;
+    width: 260px;
+    border-radius: 8px;
+    background: #f5f5f5;
+    color: #888888;
+}
+
+.check-enable .enable-icon {
+    margin: 20px 0 0 216px;
+    background-image: url(../image/check_enable.svg);
+    height: 24px;
+    width: 24px;
+}
+
+.check-disable .disable-icon {
+    margin: 20px 0 0 216px;
+    background-image: url(../image/check_disable.svg);
+    height: 24px;
+    width: 24px;
+}
+
+.check-disable .check-title{
+    margin-top: 30px;
+}
+
+.check-title {
+    font-size: 18px;
+    font-weight: bold;
+    margin-left: 24px;
+    line-height: 30px;
+}
+
+.check-content {
+    font-size: 14px;
+    margin: 9px 0 0 24px;
+    line-height: 23px;
+}
+
+.check-disable .check-title {
+    color: #333333;
+}
+
+.header {
     border-bottom: 1px solid #DDDDDD;
 }
 
@@ -90,6 +178,18 @@
     color: #323232;
 }
 
+.left-bar{
+    position: relative;
+    display: inline-block;
+    vertical-align: top;
+    width: 240px;
+    height: 100%;
+    background: #ffffff;
+}
+
+.left-bar {
+}
+
 .main {
     position: absolute;
     top: 61px;
@@ -104,14 +204,6 @@
     height: 100%;
     margin-left: auto;
     margin-right: auto;
-}
-
-.left-bar {
-    position: relative;
-    width: 240px;
-    height: 100%;
-    border: 1px solid #DDDDDD;
-    background: #ffffff;
 }
 
 .left-bar .linkImage {
@@ -189,7 +281,6 @@
     line-height: 70px;
 }
 
-
 .license-overview-form {
     margin: 15px 20px 0 20px;
     width: 856px;
@@ -211,11 +302,11 @@
     text-align: center;
 }
 
-.page-control .pc-page::placeholder{
+.page-control .pc-page::placeholder {
     color: #dddddd;
 }
 
-.page-control .pc-page::-webkit-inner-spin-button{
+.page-control .pc-page::-webkit-inner-spin-button {
     -webkit-appearance: none;
 }
 
@@ -304,6 +395,7 @@
     color: #888888;
     line-height: 30px;
 }
+
 .rd-drop-button {
     height: 30px;
 }
@@ -375,22 +467,23 @@
     display: none;
 }
 
-.ml-card{
+.ml-card {
     margin: 20px 0 0 20px;
     width: 495px;
     height: 95px;
 }
 
 .ml-key {
-    padding: 6px 0;
+    padding: 16px 0 8px 19px;
 }
 
 .ml-date {
-    padding: 6px 0;
+    padding: 8px 0 8px 19px;
+
 }
 
 .ml-type {
-    padding: 6px 0;
+    padding: 8px 0 16px 19px;
 }
 
 .ml-unbind {
@@ -432,7 +525,7 @@
     font-size: 18px;
 }
 
-.log-control{
+.log-control {
     height: 96px;
 }
 
@@ -470,26 +563,7 @@
     padding: 15px 0 0 60px;
 }
 
-.info {
-    padding-top: 15px;
-}
-
-.info span {
-    display: inline-block;
-    width: 115px;
-    font-size: 16px;
-    color: #606060;
-}
-
-.info input {
-    padding: 8px 0 8px 18px;
-    border-radius: 3px;
-    border: 1px solid #DDDDDD;
-    color: #999999;
-    font-size: 14px;
-}
-
-.net-information input{
+.net-information input {
     width: 324px;
 }
 
@@ -506,20 +580,118 @@
     width: 120px;
 }
 
-.sn-central{
+.sn-central {
     height: 70px;
     line-height: 70px;
     border-bottom: 1px solid #DDDDDD;
 }
 
-.sn-central-btn{
+.sn-central-btn {
     display: inline-block;
     margin-left: 580px;
 }
 
-.snc-information{
+.snc-info {
+    display: inline-block;
     margin: 15px 0 15px 60px;
 }
+
+.snc-info span {
+    width: 110px;
+}
+
+.snc-info input {
+    width: 320px;
+}
+
+.snc-notice {
+    display: inline-block;
+    vertical-align: top;
+    margin: 30px 0 0 30px;
+    height: 140px;
+    width: 335px;
+}
+
+.snc-notice .paragraph{
+    height: 108px;
+    width: 272px;
+}
+
+.snc-notice span {
+    display: inline-block;
+}
+
+.snc-submit {
+    padding: 15px 0 30px 174px;
+}
+
+.snc-submit .white-btn {
+    width: 170px;
+}
+
+.snc-submit .yellow-btn {
+    margin-left: 26px;
+    width: 120px;
+}
+
+.sn-child {
+    height: 60px;
+    padding-top: 30px;
+}
+
+.snh-form {
+    padding: 0 20px;
+}
+
+.alh-note {
+    padding: 30px 0 40px 0;
+}
+
+.alh-check {
+    margin-left: 20px;
+}
+
+.alh-check .check-disable {
+    margin-left: 50px;
+}
+
+.alh-license {
+    margin-left: 20px;
+}
+
+.alh-license-title{
+    margin-top: 40px;
+    font-size: 16px;
+    color: #606060;
+}
+
+.alh-license-input{
+    display: inline-block;
+    margin-top: 15px;
+    height: 36px;
+    width: 506px;
+    border: 1px solid #DDDDDD;
+    border-radius: 3px;
+    padding: 18px;
+}
+
+.alh-license .yellow-btn{
+    display: inline-block;
+    vertical-align: top;
+    margin: 16px 0 0 20px;
+}
+
+.alh-notice .alh-notice{
+    width: 506px;
+}
+
+.alh-notice .card{
+    margin-top: 20px;
+    margin-bottom: 30px;
+    width: 506px;
+    height: 64px;
+}
+
 
 
 

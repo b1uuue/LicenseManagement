@@ -1,15 +1,66 @@
-<link rel="stylesheet" href="style/Reset.css">
-<link rel="stylesheet" href="style/BasicStyle.css">
-
-<div id="ActivateLicenseHost1">
-    <div class="basic-main">
-        <div class="bm-header">
-            <span class="bm-title">Activate License</span>
-        </div>
-        <div class="bm-content">
-
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Activate License</title>
+    <link rel="stylesheet" href="style/Reset.css">
+    <link rel="stylesheet" href="style/BasicStyle.css">
+</head>
+<body>
+<div id="Header"></div>
+<div class="main">
+    <div class="main-container">
+        <div id="LeftBar" class="left-bar"></div
+        ><div class="basic-main">
+            <div class="bm-header">
+                <span class="bm-title">Activate License</span>
+            </div>
+            <div class="active-license-hosted">
+                <div class="bm-content">
+                    <div class="alh-note">
+                        <span class="title-note">License Server Deployment</span>
+                    </div>
+                    <div class="alh-check">
+                        <div class="check-enable">
+                            <div class="enable-icon"></div>
+                            <div class="check-title">Hosted by<br>Dynamsoft</div>
+                            <div class="check-content">An end-user device connects<br>to Dynamsoft Server for
+                                license<br>validation
+                            </div>
+                        </div>
+                        <div class="check-disable">
+                            <div class="disable-icon"></div>
+                            <div class="check-title">On-premise</div>
+                            <div class="check-content">An end-user device connects<br>to your server for licens<br>validation
+                            </div>
+                        </div>
+                    </div>
+                    <div class="alh-license">
+                        <div class="alh-license-title">
+                            <span>Please input your license key</span>
+                        </div>
+                        <input type="text" class="alh-license-input">
+                        <button class="yellow-btn">Active</button>
+                        <div class="alh-notice">
+                            <div class="card">
+                                <div class="notice-bulb"></div>
+                                <div class="paragraph">Note: Please find the license key in your email address used
+                                    for<br>purchase.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 </div>
+<script src="script/jquery-1.12.4.min.js"></script>
+<script>
+    $('#Header').load('header.html');
+    $('#LeftBar').load('leftBar.html')
+</script>
+</body>
+</html>
+
 
 
