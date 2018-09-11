@@ -128,15 +128,15 @@
     width: 24px;
 }
 
-.check-disable .check-title{
-    margin-top: 30px;
-}
-
 .check-title {
     font-size: 18px;
     font-weight: bold;
     margin-left: 24px;
     line-height: 30px;
+}
+
+.check-disable .check-title{
+    color: #333333;
 }
 
 .check-content {
@@ -145,8 +145,14 @@
     line-height: 23px;
 }
 
-.check-disable .check-title {
-    color: #333333;
+.sign{
+    width: 26px;
+    height:26px;
+    text-align: center;
+    line-height: 26px;
+    background: #E0E5EA;
+    color: #606060;
+    border-radius: 50%;
 }
 
 .header {
@@ -172,9 +178,8 @@
 
 .header .sy-name {
     position: absolute;
-    font: 16px bold;
-    left: 176px;
-    top: 23px;
+    font: 18px bold;
+    margin: 20px 0 0 170px;
     color: #323232;
 }
 
@@ -185,9 +190,7 @@
     width: 240px;
     height: 100%;
     background: #ffffff;
-}
-
-.left-bar {
+    border: 1px solid #DDDDDD;
 }
 
 .main {
@@ -208,10 +211,15 @@
 
 .left-bar .linkImage {
     display: inline-block;
-    width: 14px;
-    height: 14px;
+    width: 15px;
+    height: 15px;
     margin-right: 16px;
-    background-image: url(../image/testIcon.svg);
+    background-image: url(../image/IconBlack.svg);
+}
+
+.left-bar a span{
+    display: inline-block;
+    vertical-align: text-top;
 }
 
 .left-bar a:link {
@@ -219,27 +227,43 @@
     color: #606060;
 }
 
+.left-bar a:link .linkImage{
+    background-image: url(../image/IconBlack.svg);
+}
+
 .left-bar a:visited {
     color: #606060;
+}
+
+.left-bar a:visited .linkImage{
+    background-image: url(../image/IconBlack.svg);
 }
 
 .left-bar a:hover {
     color: #ffae38;
 }
 
+.left-bar a:hover .linkImage{
+    background-image: url(../image/IconYellow.svg);
+}
+
 .left-bar a:active {
     color: #ffae38;
 }
 
+.left-bar a:active .linkImage{
+    background-image: url(../image/IconYellow.svg);
+}
+
 .left-bar ul .lb-title {
     position: relative;
-    font-size: 14px;
+    font: 15px bold;
     margin: 50px 0 24px 38px;
 }
 
 .left-bar ul li {
     position: relative;
-    font-size: 14px;
+    font-size: 15px;
     margin: 0 0 20px 38px;
 }
 
@@ -655,6 +679,10 @@
     margin-left: 50px;
 }
 
+.alh-check .check-disable .check-title {
+    margin-top: 30px;
+}
+
 .alh-license {
     margin-left: 20px;
 }
@@ -690,6 +718,22 @@
     margin-bottom: 30px;
     width: 506px;
     height: 64px;
+}
+
+.alp-note{
+    padding: 30px 0 40px 0;
+}
+
+.alp-check{
+    margin-left: 20px;
+}
+
+.alp-check .check-enable{
+    margin-left: 50px;
+}
+
+.alp-check .check-enable .check-title{
+    margin-top: 30px;
 }
 
 
