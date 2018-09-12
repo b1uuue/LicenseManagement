@@ -736,6 +736,57 @@
     margin-top: 30px;
 }
 
+.alp-generate{
+    font-size: 16px;
+    color: #606060;
+}
+
+.alp-strong{
+    font-weight: bold;
+}
+
+.alp-generate input{
+    width: 321px;
+    height: 34px;
+    margin-left: 5px;
+    padding: 0 15px;
+    border: 1px solid #dddddd;
+    border-radius: 3px;
+}
+
+.alp-generate1 {
+    margin: 40px 0 0 20px;
+}
+
+.alp-generate1 .sign {
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: 16px;
+}
+
+.alp-key-input{
+    margin: 12px 0 0 64px;
+}
+
+.alp-mac-input{
+    margin: 12px 0 0 64px;
+}
+
+.alp-generate2{
+    margin: 28px 0 0 20px;
+}
+
+.alp-generate2 .sign {
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: 16px;
+}
+
+.alp-generate button{
+    margin: 18px 0 30px 64px;
+}
+
+
 
 
 
