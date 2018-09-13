@@ -10,7 +10,8 @@
 <div class="main">
     <div class="main-container">
         <div id="LeftBar" class="left-bar"></div
-        ><div class="basic-main">
+        >
+        <div class="basic-main">
             <div class="bm-header">
                 <span class="bm-title">License Overview</span>
             </div>
@@ -70,7 +71,7 @@
                     </div>
                     <div class="page-control">
                         <input id="PCPage" class="pc-page" type="number" placeholder="page">
-                        <button id="PCGo" class="pc-go" >go</button>
+                        <button id="PCGo" class="pc-go">go</button>
                         <button id="PCBack" class="pc-back"></button>
                         <span class="pc-page-current">2</span><span class="pc-page-divide">/</span><span
                             class="pc-page-total">10</span>
@@ -79,10 +80,10 @@
                 </div>
             </div>
 
-        <ul id="#ss">
-            <li>foo</li>
-            <li>bar</li>
-        </ul>
+            <ul id="#ss">
+                <li>foo</li>
+                <li>bar</li>
+            </ul>
         </div>
     </div>
 </div>
@@ -92,15 +93,15 @@
 <script>
     var testArr = $.ajax({
         type: 'POST',
-        data: JSON.stringify({"method":"listlicense"}),
+        data: JSON.stringify({"method": "listlicense"}),
         dataType: 'json',
         url: 'https://127.0.0.1:8889/',
-        success: (data,status) => {
-            return updateLOForm(data,status);
+        success: function(data, status){
+            updateLOForm(data, status)
         }
     });
 
-    function updateLOForm(data,status) {
+    function updateLOForm(data, status) {
         console.log("data: \n" + data.license[0].activetime + "\nstatus: " + status);
         // console.log(timestampToDate(1128110541500));
     }
