@@ -178,8 +178,9 @@
 
 .header .sy-name {
     position: absolute;
-    font: 18px bold;
-    margin: 20px 0 0 170px;
+    font-size: 18px;
+    font-weight: bold;
+    margin: 24px 0 0 175px;
     color: #323232;
 }
 
@@ -765,11 +766,11 @@
 }
 
 .alp-key-input{
-    margin: 12px 0 0 64px;
+    margin: 12px 0 0 68px;
 }
 
 .alp-mac-input{
-    margin: 12px 0 0 64px;
+    margin: 12px 0 0 68px;
 }
 
 .alp-generate2{
@@ -783,7 +784,7 @@
 }
 
 .alp-generate button{
-    margin: 18px 0 30px 64px;
+    margin: 16px 0 30px 68px;
 }
 
 

@@ -14,13 +14,13 @@
             <div class="bm-header">
                 <span class="bm-title">License Overview</span>
             </div>
-            <div class="license-overview">
+            <div id="LicenseOverview">
                 <div class="bm-content">
                     <div class="license-overview-count">
                         <span class="title-note">Total activate licenses:</span>
                         <span class="title-note" id="LOTotalNumber">30</span>
                     </div>
-                    <div class="license-overview-form">
+                    <div class="license-overview-form" id="LOForm">
                         <table class="form">
                             <tbody>
                             <tr class="form-head">
@@ -79,8 +79,10 @@
                 </div>
             </div>
 
-        <div id="test1">test1</div>
-        <div id="test2">test2</div>
+        <ul id="#ss">
+            <li>foo</li>
+            <li>bar</li>
+        </ul>
         </div>
     </div>
 </div>
@@ -88,26 +90,20 @@
 <script src="script/jquery-1.12.4.min.js"></script>
 <script src="script/script.js"></script>
 <script>
-    $('#Header').load('header.html');
-    $('#LeftBar').load('leftBar.html');
-
-    var value1 = document.getElementById('test1').valueOf();
-    var value2 = document.getElementById('test2').valueOf();
-
     var testArr = $.ajax({
         type: 'POST',
         data: JSON.stringify({"method":"listlicense"}),
         dataType: 'json',
         url: 'https://127.0.0.1:8889/',
-        success: function(data,status){
-            console.log("data: \n" + data.li + "\nstatus: " + status);
+        success: (data,status) => {
+            return updateLOForm(data,status);
         }
     });
 
-    
-
-
-
+    function updateLOForm(data,status) {
+        console.log("data: \n" + data.license[0].activetime + "\nstatus: " + status);
+        // console.log(timestampToDate(1128110541500));
+    }
 
 
 </script>

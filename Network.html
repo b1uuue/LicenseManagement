@@ -11,49 +11,46 @@
     <div class="main-container">
         <div id="LeftBar" class="left-bar"></div
         ><div class="basic-main">
-        <div class="bm-header">
-            <span class="bm-title">Network</span>
-        </div>
-        <div class="network">
-            <div class="bm-content">
-                <div class="net-proxy">
-                    <span class="title-note">Proxy Server Configuration</span>
-                    <div class="net-proxy-btn">
-                        <input type="checkbox">
+            <div class="bm-header">
+                <span class="bm-title">Network</span>
+            </div>
+            <div id="Network">
+                <div class="bm-content">
+                    <div class="net-proxy">
+                        <span class="title-note">Proxy Server Configuration</span>
+                        <div class="net-proxy-btn">
+                            <input type="checkbox">
+                        </div>
                     </div>
-                </div>
-                <div class="net-information">
-                    <div class="info">
-                        <span>IP Address:</span>
-                        <input type="text" id="NetIp" value="192.168.8.20">
+                    <div class="net-information">
+                        <div class="info">
+                            <span>IP Address:</span>
+                            <input type="text" id="NetIp" value="192.168.8.20">
+                        </div>
+                        <div class="info">
+                            <span>User Name:</span>
+                            <input type="text" id="NetName" value="1111">
+                        </div>
+                        <div class="info">
+                            <span>Password:</span>
+                            <input type="password" id="NetPassword" value="xxxxxxx">
+                        </div>
+                        <div class="info">
+                            <span>Port:</span>
+                            <input type="text" id="NetPort" value="xxxxxxxx">
+                        </div>
                     </div>
-                    <div class="info">
-                        <span>User Name:</span>
-                        <input type="text" id="NetName" value="1111">
+                    <div class="net-submit">
+                        <div class="white-btn" id="NetSubmitTest">Test Connectivity</div>
+                        <div class="yellow-btn" id="NetSubmitSave">Save</div>
                     </div>
-                    <div class="info">
-                        <span>Password:</span>
-                        <input type="password" id="NetPassword" value="xxxxxxx">
-                    </div>
-                    <div class="info">
-                        <span>Port:</span>
-                        <input type="text" id="NetPort" value="xxxxxxxx">
-                    </div>
-                </div>
-                <div class="net-submit">
-                    <div class="white-btn" id="NetSubmitTest">Test Connectivity</div>
-                    <div class="yellow-btn" id="NetSubmitSave">Save</div>
                 </div>
             </div>
         </div>
     </div>
-
-
+</div>
 <script src="script/jquery-1.12.4.min.js"></script>
-<script>
-    $('#Header').load('header.html');
-    $('#LeftBar').load('leftBar.html')
-</script>
+<script src="script/script.js"></script>
 </body>
 </html>
 
