@@ -10,8 +10,7 @@
 <div class="main">
     <div class="main-container">
         <div id="LeftBar" class="left-bar"></div
-        >
-        <div class="basic-main">
+        ><div class="basic-main">
             <div class="bm-header">
                 <span class="bm-title">License Overview</span>
             </div>
@@ -31,41 +30,6 @@
                                 <td>Product and Type</td>
                                 <td>Expiration Date</td>
                             </tr>
-                            <tr class="form-body">
-                                <td>justtesttextinthisline</td>
-                                <td>800</td>
-                                <td>90</td>
-                                <td>dbr development</td>
-                                <td>2018-01-23</td>
-                            </tr>
-                            <tr class="form-body">
-                                <td>justtesttextinthisline</td>
-                                <td>800</td>
-                                <td>90</td>
-                                <td>dbr development</td>
-                                <td>2018-01-23</td>
-                            </tr>
-                            <tr class="form-body">
-                                <td>justtesttextinthisline</td>
-                                <td>800</td>
-                                <td>90</td>
-                                <td>dbr development</td>
-                                <td>2018-01-23</td>
-                            </tr>
-                            <tr class="form-body">
-                                <td>justtesttextinthisline</td>
-                                <td>800</td>
-                                <td>90</td>
-                                <td>dbr development</td>
-                                <td>2018-01-23</td>
-                            </tr>
-                            <tr class="form-body">
-                                <td>justtesttextinthisline</td>
-                                <td>800</td>
-                                <td>90</td>
-                                <td>dbr development</td>
-                                <td>2018-01-23</td>
-                            </tr>
                             </tbody>
                         </table>
                     </div>
@@ -80,10 +44,10 @@
                 </div>
             </div>
 
-            <ul id="#ss">
+            <div id="ss" class="test">
                 <li>foo</li>
                 <li>bar</li>
-            </ul>
+            </div>
         </div>
     </div>
 </div>
@@ -96,14 +60,37 @@
         data: JSON.stringify({"method": "listlicense"}),
         dataType: 'json',
         url: 'https://127.0.0.1:8889/',
-        success: function(data, status){
+        success: function (data, status) {
             updateLOForm(data, status)
         }
     });
 
     function updateLOForm(data, status) {
-        console.log("data: \n" + data.license[0].activetime + "\nstatus: " + status);
-        // console.log(timestampToDate(1128110541500));
+        let pageNum = parseInt(data.license.length / 5);
+        let pageLes = data.license.length % 5
+        let pageBuffer = 0;
+        if (status == 'success') {
+            for (let i = 0; i < 5; i++) {
+                console.log(pageBuffer * 5 + pageLes);
+
+                if ((pageBuffer * 5 + pageLes) < i+1) {
+                    $('#LOForm tbody').append('<tr class="form-body">' + '<td></td><td></td><td></td><td></td><td></td>' + '</tr>')
+                }
+                else {
+                    //get expiration date
+                    let _expirationDate = timestampToDate(data.license[i].activetime);
+                    //load form
+                    $('#LOForm tbody').append('<tr class="form-body">' +
+                        '<td>' + data.license[i].licensekey + '</td>' +
+                        '<td>' + data.license[i].quota + '</td>' +
+                        '<td>' + data.license[i].used + '</td>' +
+                        '<td>' + data.license[i].producttype + '</td>' +
+                        '<td>' + _expirationDate + '</td>' + '</tr>'
+                    );
+                }
+            }
+
+        }
     }
 
 

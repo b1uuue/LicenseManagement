@@ -39,6 +39,7 @@
 }
 
 .form td {
+    height: 51px;
     font-size: 14px;
     color: #444444;
     border-bottom: 1px solid #d9d9d9;
@@ -47,6 +48,7 @@
 }
 
 .form-head td {
+    height: 40px;
     padding-bottom: 10px;
     color: #888888;
 }

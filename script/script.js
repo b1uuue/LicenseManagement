@@ -43,5 +43,10 @@ var timestampToDate = function (_timestamp) {
     let D = _stamp.getDate()+ 1 < 10 ? '0' + (_stamp.getDate() + 1) : _stamp.getDate() + 1;
     _date = Y + '-' + M + '-' + D;
     return _date;
-}
+};
+
+//upload
+
+
+
 
