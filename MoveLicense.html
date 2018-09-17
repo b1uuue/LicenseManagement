@@ -19,14 +19,15 @@
                     <div class="ml-note">
                         <span class="title-note">Please select a license key</span>
                     </div>
-                    <div class="ml-license-select" id="MLLicense">
-                        <div class="ml-drop-button">xxxx-xxxxxxxx-xxxxx-xxxxxxxx</div>
-                        <ul class="ml-drop-list">
-                            <li>xxxx-xxxxxxxx-xxxxx-xxxxxxxx</li>
-                            <li>xxxx-xxxxxxxx-xxxxx-xxxxxxxx</li>
-                            <li>xxxx-xxxxxxxx-xxxxx-xxxxxxxx</li>
-                            <li>xxxx-xxxxxxxx-xxxxx-xxxxxxxx</li>
-                        </ul>
+                    <div class="ml-license-select" >
+                        <div class="drop">
+                            <div class="drop-button" id="MLDropButton">xxxx-xxxxxxxx-xxxxx-xxxxxxxx</div>
+                            <ul class="drop-list">
+                                <li>1111-xxxxxxxx-xxxxx-xxxxxxxx</li>
+                                <li>2222-xxxxxxxx-xxxxx-xxxxxxxx</li>
+                                <li>3333-xxxxxxxx-xxxxx-xxxxxxxx</li>
+                            </ul>
+                        </div>
                     </div>
                     <div class="ml-card">
                         <div class="card">
@@ -56,6 +57,16 @@
 </div>
 <script src="script/jquery-1.12.4.min.js"></script>
 <script src="script/script.js"></script>
+<script>
+
+
+    $('.drop-list li').click(function () {
+        $('.drop-list').css('display', 'none');
+        $('#MLDropButton').removeClass('d-button').addClass('drop-button');
+        $('#MLDropButton').text($(this).text());
+    });
+
+</script>
 </body>
 </html>
 

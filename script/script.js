@@ -45,7 +45,11 @@ var timestampToDate = function (_timestamp) {
     return _date;
 };
 
-//upload
+// drop list
+$('.drop-button').click(function () {
+    $('.drop-list').css('display','block');
+    $('#RDDropButton').removeClass('drop-button').addClass('d-button');
+});
 
 
 

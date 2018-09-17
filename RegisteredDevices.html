@@ -21,12 +21,14 @@
                         <span class="title-note" id="RDTotalNumber">10000</span>
                         <span class="rd-filter">Filter by product:</span>
                         <div class="rd-product">
-                            <div class="rd-drop-button">Dynamsoft Barcode Reader</div>
-                            <ul class="rd-drop-list">
-                                <li>Dynamsoft Product 1</li>
-                                <li>Dynamsoft Product 2</li>
-                                <li>Dynamsoft Product 3</li>
-                            </ul>
+                            <div class="drop">
+                                <div class="drop-button" id="RDDropButton">Dynamsoft Barcode Reader</div>
+                                <ul class="drop-list">
+                                    <li>Dynamsoft Product 1</li>
+                                    <li>Dynamsoft Product 2</li>
+                                    <li>Dynamsoft Product 3</li>
+                                </ul>
+                            </div>
                         </div>
                     </div>
                     <div class="register-devices-form">
@@ -37,30 +39,6 @@
                                 <td>MAC Address</td>
                                 <td>License Type</td>
                                 <td>Expiration Date</td>
-                            </tr>
-                            <tr class="form-body">
-                                <td>thisistheteststring</td>
-                                <td>00:00:00:00</td>
-                                <td>dbr development license</td>
-                                <td>2018-01-23</td>
-                            </tr>
-                            <tr class="form-body">
-                                <td>thisistheteststring</td>
-                                <td>00:00:00:00</td>
-                                <td>dbr development license</td>
-                                <td>2018-01-23</td>
-                            </tr>
-                            <tr class="form-body">
-                                <td>thisistheteststring</td>
-                                <td>00:00:00:00</td>
-                                <td>dbr development license</td>
-                                <td>2018-01-23</td>
-                            </tr>
-                            <tr class="form-body">
-                                <td>thisistheteststring</td>
-                                <td>00:00:00:00</td>
-                                <td>dbr development license</td>
-                                <td>2018-01-23</td>
                             </tr>
                             <tr class="form-body">
                                 <td>thisistheteststring</td>
@@ -87,6 +65,35 @@
 </div>
 <script src="script/jquery-1.12.4.min.js"></script>
 <script src="script/script.js"></script>
+<script>
+    let formObject, pageNum, lineLes, pageBuffer;
+    $.ajax({
+        type: 'POST',
+        data: JSON.stringify({"method": "listproxy"}),
+        dataType: 'json',
+        url: 'https://127.0.0.1:8889/',
+        success: function (data) {
+            // formObject = data;
+            // pageNum = parseInt(data.license.length / 5);
+            // lineLes = data.license.length % 5;
+            // pageBuffer = 0;
+            // $('#LOTotalNumber').text(data.license.length);
+            // $('.pc-page-total').text(pageNum+1);
+            // updateLOForm(formObject);
+        }
+    });
+    
+    function updateBSForm(data) {
+        $('tbody').append();
+    }
+
+    $('.drop-list li').click(function () {
+        $('.drop-list').css('display', 'none');
+        $('#RDDropButton').removeClass('d-button').addClass('drop-button');
+        $('#RDDropButton').text($(this).text());
+    });
+
+</script>
 </body>
 </html>
 
