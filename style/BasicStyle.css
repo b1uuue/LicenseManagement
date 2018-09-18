@@ -62,7 +62,7 @@
 .notice-bulb {
     display: inline-block;
     margin: 12px 0 0 12px;
-    background-image: url(../image/lightbulb.svg);
+    background: url(../image/lightbulb.svg) no-repeat;
     height: 20px;
     width: 20px;
 }
@@ -115,14 +115,14 @@
 
 .check-enable .enable-icon {
     margin: 20px 0 0 216px;
-    background-image: url(../image/check_enable.svg);
+    background: url(../image/check_enable.svg) no-repeat;
     height: 24px;
     width: 24px;
 }
 
 .check-disable .disable-icon {
     margin: 20px 0 0 216px;
-    background-image: url(../image/check_disable.svg);
+    background: url(../image/check_disable.svg) no-repeat;
     height: 24px;
     width: 24px;
 }
@@ -205,6 +205,7 @@
 #Header {
     height: 60px;
     border-bottom: 1px solid #DDDDDD;
+    background: #FFFFFF;
 }
 
 .header-container {
@@ -213,9 +214,10 @@
     margin-left: auto;
     margin-right: auto;
 }
+
 .ds-logo {
     display: inline-block;
-    background-image: url(../image/logo-dynamsoft-160x40.svg);
+    background: url(../image/logo-dynamsoft-160x40.svg) no-repeat;
     margin: 15px 10px 0  37px;
     width: 120px;
     height: 30px;
@@ -230,8 +232,24 @@
     color: #323232;
 }
 
+.main {
+    position: absolute;
+    width: 100%;
+    top: 60px;
+    bottom: 0;
+}
+
+.main-container {
+    width: 1200px;
+    height: 100%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
 .left-bar{
-    position: relative;
+    position: absolute;
+    top: 0;
+    bottom: 0;
     display: inline-block;
     vertical-align: top;
     width: 240px;
@@ -240,28 +258,12 @@
     border-top: 0;
 }
 
-.main {
-    position: relative;
-    bottom: 0px;
-    /*background: #F5F5F5;*/
-    background: #333333 ;
-}
-
-.main-container {
-    position: relative;
-    width: 1200px;
-    height: 100%;
-    margin-left: auto;
-    margin-right: auto;
-    background: #555555;
-}
-
 .left-bar .linkImage {
     display: inline-block;
     width: 15px;
     height: 15px;
     margin-right: 16px;
-    background-image: url(../image/IconBlack.svg);
+    background: url(../image/IconBlack.svg) no-repeat;
 }
 
 .left-bar a span{
@@ -275,7 +277,7 @@
 }
 
 .left-bar a:link .linkImage{
-    background-image: url(../image/IconBlack.svg);
+    background: url(../image/IconBlack.svg) no-repeat;
 }
 
 .left-bar a:visited {
@@ -283,7 +285,7 @@
 }
 
 .left-bar a:visited .linkImage{
-    background-image: url(../image/IconBlack.svg);
+    background: url(../image/IconBlack.svg) no-repeat;
 }
 
 .left-bar a:hover {
@@ -291,7 +293,7 @@
 }
 
 .left-bar a:hover .linkImage{
-    background-image: url(../image/IconYellow.svg);
+    background: url(../image/IconYellow.svg) no-repeat;
 }
 
 .left-bar a:active {
@@ -299,7 +301,7 @@
 }
 
 .left-bar a:active .linkImage{
-    background-image: url(../image/IconYellow.svg);
+    background: url(../image/IconYellow.svg) no-repeat;
 }
 
 .left-bar ul .lb-title {
@@ -315,10 +317,9 @@
 }
 
 .basic-main {
-    position: relative;
-    display: inline-block;
+    position: absolute;
+    margin-left: 240px;
     width: 960px;
-    background: #F5F5F5;
 }
 
 .bm-header {
@@ -494,16 +495,12 @@
     height: 95px;
 }
 
-.ml-key {
-    padding: 16px 0 8px 19px;
-}
-
-.ml-date {
+.ml-card .card{
     padding: 8px 0 8px 19px;
 }
 
-.ml-type {
-    padding: 8px 0 16px 19px;
+.ml-card span{
+    line-height: 30px;
 }
 
 .ml-unbind {
@@ -514,7 +511,7 @@
 .ml-unbind-bulb {
     display: inline-block;
     vertical-align: middle;
-    background-image: url(../image/lightbulb.svg);
+    background: url(../image/lightbulb.svg) no-repeat;
     width: 20px;
     height: 20px;
     margin: 0 9px 0 15px;
@@ -684,36 +681,68 @@
 }
 
 .alh-license-title{
-    margin-top: 40px;
+    margin: 40px 0 15px 0;
     font-size: 16px;
     color: #606060;
 }
 
 .alh-license-input{
     display: inline-block;
-    margin-top: 15px;
-    height: 36px;
+    vertical-align: middle;
+    height: 37px;
     width: 506px;
     border: 1px solid #DDDDDD;
     border-radius: 3px;
-    padding: 18px;
+    padding: 0 56px 0 18px;
+    font-size: 14px;
+    color: #333333;
+}
+
+.alh-license-input::placeholder{
+    color: #999999;
+}
+
+.alh-input-check{
+    display: inline-block;
+    vertical-align: middle;
+    margin: 0 38px 0 -40px;
+    background: url(../image/check_green.svg) no-repeat;
+    width: 20px;
+    height: 20px;
 }
 
 .alh-license .yellow-btn{
     display: inline-block;
-    vertical-align: top;
-    margin: 16px 0 0 20px;
+    vertical-align: middle;
 }
 
-.alh-notice .alh-notice{
+.alh-notice{
+    margin: 20px 0 30px 0;
     width: 506px;
 }
 
 .alh-notice .card{
-    margin-top: 20px;
-    margin-bottom: 30px;
-    width: 506px;
     height: 64px;
+}
+
+.alh-card{
+    margin: 20px 0;
+    width: 506px;
+    display: none;
+}
+
+.alh-card .card{
+    padding: 8px 0 8px 19px;
+}
+
+.alh-card span{
+    line-height: 30px;
+}
+
+.alh-license .white-btn{
+    display: none;
+    margin-bottom: 30px;
+    width: 260px;
 }
 
 .alp-note{

@@ -22,6 +22,7 @@ time, mark, audio, video, input{
 html,body {
     height: 100%;
     width: 100%;
+    background: #F5F5F5;
 }
 a{
     text-decoration: none;

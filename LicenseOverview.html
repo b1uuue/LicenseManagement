@@ -71,7 +71,6 @@
         $('.pc-page-current').text(pageBuffer+1);
         $('.form-body').empty();
         for (let i = pageBuffer * 5; i < (pageBuffer * 5 + 5); i++) {
-            console.log(i);
             //filling empty line
             if (pageBuffer == pageNum && (pageBuffer * 5 + lineLes) < i + 1) {
                 $('#LOForm tbody').append('<tr class="form-body">' + '<td></td><td></td><td></td><td></td><td></td>' + '</tr>')
@@ -96,7 +95,6 @@
             let pb_int = parseInt($('#PCPage').val());
             pb_int--;
             if (pb_int <= pageNum && pb_int>=0){
-
                 pageBuffer = pb_int;
                 updateLOForm(formObject);
             }
@@ -107,7 +105,6 @@
         let pb_int = parseInt($('#PCPage').val());
         pb_int--;
         if (pb_int <= pageNum && pb_int>=0){
-
             pageBuffer = pb_int;
             updateLOForm(formObject);
         }
@@ -115,7 +112,6 @@
 
     $('#PCBack').click(function () {
         let pb_int = pageBuffer-1;
-
         if(pb_int>=0){
             pageBuffer--;
             updateLOForm(formObject);
@@ -124,14 +120,11 @@
 
     $('#PCNext').click(function () {
         let pb_int = pageBuffer + 1;
-
         if(pb_int<=pageNum){
             pageBuffer++;
             updateLOForm(formObject);
         }
     });
-
-
 </script>
 </body>
 </html>

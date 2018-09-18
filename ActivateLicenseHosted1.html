@@ -23,13 +23,16 @@
                         <div class="check-enable">
                             <div class="enable-icon"></div>
                             <div class="check-title">Hosted by<br>Dynamsoft</div>
-                            <div class="check-content">An end-user device connects<br>to Dynamsoft Server for license<br>validation</div>
+                            <div class="check-content">An end-user device connects<br>to Dynamsoft Server for
+                                license<br>validation
+                            </div>
                         </div>
                         <a href="ActivateLicenseOnPremise.html">
                             <div class="check-disable">
                                 <div class="disable-icon"></div>
                                 <div class="check-title">On-premise</div>
-                                <div class="check-content">An end-user device connects<br>to your server for licens<br>validation</div>
+                                <div class="check-content">An end-user device connects<br>to your server for licens<br>validation
+                                </div>
                             </div>
                         </a>
                     </div>
@@ -37,9 +40,10 @@
                         <div class="alh-license-title">
                             <span>Please input your license key</span>
                         </div>
-                        <input type="text" class="alh-license-input">
-                        <button class="yellow-btn">Active</button>
-                        <div class="alh-notice">
+                        <input type="text" class="alh-license-input" placeholder="xxx-xxxxxxxxxx-xxxxxx">
+                        <div class="alh-input-check" id="ALHInputCheck"></div>
+                        <button class="yellow-btn" id="alh-active-btn">Active</button>
+                        <div class="alh-notice" id="ALHNotice">
                             <div class="card">
                                 <div class="notice-bulb"></div>
                                 <div class="paragraph">Note: Please find the license key in your email address used
@@ -47,6 +51,29 @@
                                 </div>
                             </div>
                         </div>
+                        <div class="alh-card" id="ALHCard">
+                            <div class="card">
+                                <div>
+                                    <span>License Key: </span>
+                                    <span id="ALHKey">xxx-xxxxx-xxxxxxxxxx</span>
+                                </div>
+                                <div>
+                                    <span>Product: </span>
+                                    <span id="ALHProduct">Dynamsoft Barcode Reader</span>
+                                </div>
+                                <div>
+                                    <span>Quota: </span>
+                                    <span id="ALHQuota">100 devices</span>
+                                </div>
+                                <div>
+                                    <span>Expiration Date: </span>
+                                    <span id="ALHExpirationDate">2018-9-18</span>
+                                </div>
+                            </div>
+                        </div>
+                        <a class="white-btn" id="ALHView" href="LicenseOverview.html">
+                            View all the activated licenses
+                        </a>
                     </div>
                 </div>
             </div>
@@ -55,6 +82,15 @@
 </div>
 <script src="script/jquery-1.12.4.min.js"></script>
 <script src="script/script.js"></script>
+<script>
+
+    $('#alh-active-btn').click(function () {
+        $('#ALHNotice').css('display', 'none');
+        $('#ALHCard').css('display', 'block');
+        $('#ALHView').css('display', 'block');
+    });
+
+</script>
 </body>
 </html>
 
