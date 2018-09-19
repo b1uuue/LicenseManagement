@@ -11,6 +11,10 @@
     cursor: pointer;
 }
 
+.white-btn:hover{
+    background: #EEEEEE;
+}
+
 .yellow-btn {
     display: inline-block;
     vertical-align: middle;
@@ -25,7 +29,13 @@
     cursor: pointer;
 }
 
+.yellow-btn:hover{
+    background: #ffa400;
+}
+
 .title-note {
+    display: inline-block;
+    vertical-align: middle;
     margin-left: 20px;
     font-size: 18px;
     color: #323232;
@@ -89,7 +99,7 @@
     padding: 8px 0 8px 18px;
     border-radius: 3px;
     border: 1px solid #DDDDDD;
-    color: #999999;
+    color: #333333;
     font-size: 14px;
 }
 
@@ -552,8 +562,8 @@
     width: 320px;
     border-radius: 3px;
     border: 1px solid #DDDDDD;
-    padding-left: 18px;
-    color: #999999;
+    padding: 0 15px;
+    color: #333333;
     font-size: 14px;
 }
 
@@ -703,15 +713,16 @@
 }
 
 .alh-input-check{
-    display: inline-block;
+    display: none;
     vertical-align: middle;
-    margin: 0 38px 0 -40px;
+    margin: 0 16px 0 -40px;
     background: url(../image/check_green.svg) no-repeat;
     width: 20px;
     height: 20px;
 }
 
 .alh-license .yellow-btn{
+    margin-left: 15px;
     display: inline-block;
     vertical-align: middle;
 }

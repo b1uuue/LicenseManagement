@@ -22,11 +22,7 @@
                     <div class="ml-license-select" >
                         <div class="drop">
                             <div class="drop-button" id="MLDropButton">xxxx-xxxxxxxx-xxxxx-xxxxxxxx</div>
-                            <ul class="drop-list">
-                                <li>1111-xxxxxxxx-xxxxx-xxxxxxxx</li>
-                                <li>2222-xxxxxxxx-xxxxx-xxxxxxxx</li>
-                                <li>3333-xxxxxxxx-xxxxx-xxxxxxxx</li>
-                            </ul>
+                            <ul class="drop-list"></ul>
                         </div>
                     </div>
                     <div class="ml-card">
@@ -59,12 +55,59 @@
 <script src="script/script.js"></script>
 <script>
 
+    let licenseObject, licenseNum, licenseIndex;
 
-    $('.drop-list li').click(function () {
-        $('.drop-list').css('display', 'none');
-        $('#MLDropButton').removeClass('d-button').addClass('drop-button');
-        $('#MLDropButton').text($(this).text());
+    function LicenseSelect(){
+        return $('.drop-list li').click(function () {
+            $('.drop-list').css('display', 'none');
+            let _licenseSelected = $('#MLDropButton');
+            _licenseSelected.removeClass('d-button').addClass('drop-button');
+            _licenseSelected.text($(this).text());
+            // console.log($('.drop-list li').index(this));
+
+            for (let i = 0; i < licenseNum; i++) {
+                if (_licenseSelected.text() === licenseObject.license[i].licensekey){
+                    licenseIndex = i;
+                    //get expiration date
+                    let _expirationDate = timestampToDate(licenseObject.license[i].activetime);
+                    $('#MLCardKey').text(licenseObject.license[i].licensekey);
+                    $('#MLCardDate').text(_expirationDate);
+                    $('#MLCardType').text(licenseObject.license[i].type);
+                    break;
+                }
+            }
+        });
+    }
+
+    $.ajax({
+        type: 'POST',
+        data: JSON.stringify({"method": "listlicense"}),
+        dataType: 'json',
+        url: 'https://127.0.0.1:8889/',
+        success: function (data) {
+            licenseObject = data;
+            licenseNum = data.license.length;
+            let _list = $('.drop-list');
+            for (let i = 0; i < licenseNum; i++) {
+                _list.append('<li>' + licenseObject.license[i].licensekey+ '</li>')
+            }
+            LicenseSelect();
+            $('.drop-button').click(function () {
+                $('.drop-list').css('display','block');
+                $('#MLDropButton').removeClass('drop-button').addClass('d-button');
+            });
+        }
     });
+
+
+    // unbind from this server
+    $('#MLUnbindBtn').click(function () {
+
+    });
+
+
+
+
 
 </script>
 </body>

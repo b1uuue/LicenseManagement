@@ -40,7 +40,7 @@
                         <div class="alh-license-title">
                             <span>Please input your license key</span>
                         </div>
-                        <input type="text" class="alh-license-input" placeholder="xxx-xxxxxxxxxx-xxxxxx">
+                        <input type="text" class="alh-license-input" id="ALHLicenseInput" placeholder="xxx-xxxxxxxxxx-xxxxxx">
                         <div class="alh-input-check" id="ALHInputCheck"></div>
                         <button class="yellow-btn" id="alh-active-btn">Active</button>
                         <div class="alh-notice" id="ALHNotice">
@@ -84,11 +84,62 @@
 <script src="script/script.js"></script>
 <script>
 
-    $('#alh-active-btn').click(function () {
-        $('#ALHNotice').css('display', 'none');
-        $('#ALHCard').css('display', 'block');
-        $('#ALHView').css('display', 'block');
+    let licenseObject, licenseNum;
+
+    $.ajax({
+        type: 'POST',
+        data: JSON.stringify({"method": "listlicense"}),
+        dataType: 'json',
+        url: 'https://127.0.0.1:8889/',
+        success: function (data) {
+            licenseObject = data;
+            licenseNum = data.license.length;
+        }
     });
+
+    function Active(){
+        // if license not exist
+        let _licenseNotExist = 0;
+        for (let i = 0; i < licenseNum; i++) {
+            _licenseNotExist++;
+            let licenseText = $('#ALHLicenseInput').val();
+            //license exist
+            if (licenseText === licenseObject.license[i].licensekey) {
+                _licenseNotExist = 0;
+                //get expiration date
+                let _expirationDate = timestampToDate(licenseObject.license[i].activetime);
+                $('#ALHInputCheck').css({
+                    'display': 'inline-block',
+                    'background': 'url(./image/check_green.svg) no-repeat'
+                });
+                $('#ALHNotice').css('display', 'none');
+                $('#ALHCard').css('display', 'block');
+                $('#ALHKey').text(licenseObject.license[i].licensekey);
+                $('#ALHProduct').text(licenseObject.license[i].product);
+                $('#ALHQuota').text(licenseObject.license[i].quota);
+                $('#ALHExpirationDate').text(_expirationDate);
+                $('#ALHView').css('display', 'block');
+                break;
+            }
+        }
+        // license not exist
+        if (_licenseNotExist) {
+            $('#ALHInputCheck').css({
+                'display': 'inline-block',
+                'background': 'url(./image/close_red.svg) no-repeat'
+            });
+        }
+    }
+
+    $('#ALHLicenseInput').focus();
+
+    $('#ALHLicenseInput').bind('keypress',function (event) {
+        if(event.keyCode == 13){
+            Active();
+        }
+    });
+
+    $('#alh-active-btn').click(Active());
 
 </script>
 </body>

@@ -32,24 +32,21 @@ $('#LeftBar').load('leftBar.html', function () {
 });
 
 //transform timestamp
-var timestampToDate = function (_timestamp) {
-    if (typeof(_timestamp) == "string"){
-        _timestamp = parseInt(_timestamp);
+function timestampToDate(_timestamp) {
+    let _lenTime = _timestamp.length;
+    for (let i = 0; i < (13-_lenTime); i++) {
+        _timestamp*=10;
     }
     let _stamp = new Date(_timestamp);
     let _date;
-    let Y = _stamp.getFullYear();
+    let Y = _stamp.getUTCFullYear();
     let M = _stamp.getMonth() + 1 < 10 ? '0' + (_stamp.getMonth() + 1) : _stamp.getMonth() + 1;
-    let D = _stamp.getDate()+ 1 < 10 ? '0' + (_stamp.getDate() + 1) : _stamp.getDate() + 1;
+    let D = _stamp.getDate() + 1 < 10 ? '0' + (_stamp.getDate() + 1) : _stamp.getDate() + 1;
+    console.log(Y, M, D);
     _date = Y + '-' + M + '-' + D;
     return _date;
-};
+}
 
-// drop list
-$('.drop-button').click(function () {
-    $('.drop-list').css('display','block');
-    $('#RDDropButton').removeClass('drop-button').addClass('d-button');
-});
 
 
 

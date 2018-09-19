@@ -72,7 +72,7 @@
         $('.form-body').empty();
         for (let i = pageBuffer * 5; i < (pageBuffer * 5 + 5); i++) {
             //filling empty line
-            if (pageBuffer == pageNum && (pageBuffer * 5 + lineLes) < i + 1) {
+            if (pageBuffer === pageNum && (pageBuffer * 5 + lineLes) < i + 1) {
                 $('#LOForm tbody').append('<tr class="form-body">' + '<td></td><td></td><td></td><td></td><td></td>' + '</tr>')
             }
             else {
@@ -90,23 +90,21 @@
         }
     }
 
-    $('#PCPage').bind('keypress',function (event) {
-        if(event.keyCode == 13){
-            let pb_int = parseInt($('#PCPage').val());
-            pb_int--;
-            if (pb_int <= pageNum && pb_int>=0){
-                pageBuffer = pb_int;
-                updateLOForm(formObject);
-            }
-        }
-    });
-
-    $('#PCGo').click(function () {
+    function Go() {
         let pb_int = parseInt($('#PCPage').val());
         pb_int--;
         if (pb_int <= pageNum && pb_int>=0){
             pageBuffer = pb_int;
             updateLOForm(formObject);
+        }
+    }
+
+    $('#PCGo').click(Go());
+
+    $('#PCPage').focus();
+    $('#PCPage').bind('keypress',function (event) {
+        if(event.keyCode == 13){
+            Go();
         }
     });
 
