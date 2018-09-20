@@ -50,6 +50,7 @@
 <script src="script/jquery-1.12.4.min.js"></script>
 <script src="script/script.js"></script>
 <script>
+    /* global $ */
     let formObject, pageNum, lineLes, pageBuffer;
     $.ajax({
         type: 'POST',
@@ -62,15 +63,15 @@
             lineLes = data.license.length % 5;
             pageBuffer = 0;
             $('#LOTotalNumber').text(data.license.length);
-            $('.pc-page-total').text(pageNum+1);
+            $('.pc-page-total').text(pageNum + 1);
             updateLOForm(formObject);
         }
     });
 
     function updateLOForm(data) {
-        $('.pc-page-current').text(pageBuffer+1);
+        $('.pc-page-current').text(pageBuffer + 1);
         $('.form-body').empty();
-        for (let i = pageBuffer * 5; i < (pageBuffer * 5 + 5); i++) {
+        for (let i = pageBuffer * 5; i < (pageBuffer * 5 + 5); i++) {//eslint-disbale line
             //filling empty line
             if (pageBuffer === pageNum && (pageBuffer * 5 + lineLes) < i + 1) {
                 $('#LOForm tbody').append('<tr class="form-body">' + '<td></td><td></td><td></td><td></td><td></td>' + '</tr>')
@@ -91,9 +92,10 @@
     }
 
     function Go() {
-        let pb_int = parseInt($('#PCPage').val());
+        let $page = $('#PCPage');
+        let pb_int = $page.val();
         pb_int--;
-        if (pb_int <= pageNum && pb_int>=0){
+        if (pb_int <= pageNum && pb_int >= 0) {
             pageBuffer = pb_int;
             updateLOForm(formObject);
         }
@@ -101,16 +103,21 @@
 
     $('#PCGo').click(Go());
 
-    $('#PCPage').focus();
-    $('#PCPage').bind('keypress',function (event) {
-        if(event.keyCode == 13){
+    let $page = $('#PCPage');
+    $page.focus();
+    $page.keypress(function (event) {
+        if (event.keyCode === 13) {
             Go();
         }
     });
+    $page.on('input', function () {
+        let pb_int = $(this).val();
+        $(this).val(Math.max(Math.min(pb_int, pageNum + 1), 1));
+    });
 
     $('#PCBack').click(function () {
-        let pb_int = pageBuffer-1;
-        if(pb_int>=0){
+        let pb_int = pageBuffer - 1;
+        if (pb_int >= 0) {
             pageBuffer--;
             updateLOForm(formObject);
         }
@@ -118,7 +125,7 @@
 
     $('#PCNext').click(function () {
         let pb_int = pageBuffer + 1;
-        if(pb_int<=pageNum){
+        if (pb_int <= pageNum) {
             pageBuffer++;
             updateLOForm(formObject);
         }

@@ -18,23 +18,22 @@
                 <div class="bm-content">
                     <div class="sn-central">
                         <span class="title-note">A Central Licensing Server</span>
-                        <div class="sn-central-btn">
-                            <input type="checkbox">
-                        </div>
+                        <input type="checkbox" id="SNCentral" style="display: none;">
+                        <label for="SNCentral" class="check-btn" id="CheckBtn"></label>
                     </div>
                     <div class="snc-information">
                         <div class="snc-info">
                             <div class="info">
                                 <span>IP Address:</span>
-                                <input type="text" id="SNCIp" placeholder="192.168.8.236">
+                                <input type="text" id="SNCIp" placeholder="192.168.8.236" maxlength="20">
                             </div>
                             <div class="info">
                                 <span>Port:</span>
-                                <input type="text" id="SNCPort" placeholder="8062">
+                                <input type="text" id="SNCPort" placeholder="8062" maxlength="6">
                             </div>
                             <div class="info">
                                 <span>User Name:</span>
-                                <input type="text" id="SNCName" placeholder="b1uuue">
+                                <input type="text" id="SNCName" placeholder="b1uuue" maxlength="20">
                             </div>
                         </div>
                         <div class="snc-notice">
@@ -50,8 +49,8 @@
                         </div>
                     </div>
                     <div class="snc-submit">
-                        <div class="white-btn">Test Connectivity</div>
-                        <div class="yellow-btn">Save</div>
+                        <div class="white-btn" id="SNCConnect">Test Connectivity</div>
+                        <div class="yellow-btn" id="SNCSave">Save</div>
                     </div>
                 </div>
             </div>
@@ -97,7 +96,62 @@
 <script src="script/jquery-1.12.4.min.js"></script>
 <script src="script/script.js"></script>
 <script>
+    let formObject, pageNum, pageBuffer, lineLes;
 
+    $('#SNCIp').focus();
+
+    $('#SNCConnect').click(function () {
+        // test connectivity
+    });
+
+    $('#SNCSave').click(function () {
+        // saveA central licensing server
+    });
+
+    function updateSNForm(date){
+
+    }
+
+    function Go() {
+        let $page = $('#PCPage');
+        let pb_int = $page.val();
+        pb_int--;
+        if (pb_int <= pageNum && pb_int >= 0) {
+            pageBuffer = pb_int;
+            updateLOForm(formObject);
+        }
+    }
+
+    $('#PCGo').click(Go());
+
+    let $page = $('#PCPage');
+    $page.keypress(function (event) {
+        if (event.keyCode === 13) {
+            Go();
+        }
+    });
+    $page.on('input', function () {
+        let pb_int = $(this).val();
+        $(this).val(Math.max(Math.min(pb_int, pageNum + 1), 1));
+    });
+
+    $('#PCBack').click(function () {
+        let pb_int = pageBuffer - 1;
+        if (pb_int >= 0) {
+            pageBuffer--;
+            updateSNForm(formObject);
+        }
+    });
+
+    $('#PCNext').click(function () {
+        let pb_int = pageBuffer + 1;
+        if (pb_int <= pageNum) {
+            pageBuffer++;
+            updateSNForm(formObject);
+        }
+    });
+
+    $('#SNCentral').val()
 
 </script>
 </body>

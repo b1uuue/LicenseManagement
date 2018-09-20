@@ -32,8 +32,7 @@
                         <div class="check-enable">
                             <div class="enable-icon"></div>
                             <div class="check-title">On-premise</div>
-                            <div class="check-content">An end-user device connects<br>to your server for licens<br>validation
-                            </div>
+                            <div class="check-content">An end-user device connects<br>to your server for license<br>validation</div>
                         </div>
                     </div>
                     <div class="alp-generate">
@@ -43,18 +42,17 @@
                         </div>
                         <div class="alp-key-input">
                             <span>Please input your license key :</span>
-                            <input type="text">
+                            <input type="text" id="ALPKey" maxlength="30" placeholder="b1uuue">
                         </div>
                         <div class="alp-mac-input">
-                            <span>Please input </span><span
-                                class="alp-strong">the MAC address of your server </span>:
-                            <input type="text">
+                            <span>Please input </span><span class="alp-strong">the MAC address of your server </span>:
+                            <input type="text" id="ALPMac" maxlength="30" placeholder="00-01-2E-41-93-54">
                         </div>
                         <div class="alp-generate2">
                             <div class="sign">2</div>
                             <span>Download the generated license file</span>
                         </div>
-                        <button class="white-btn">Download</button>
+                        <button class="white-btn" id="ALPDownload">Download</button>
                     </div>
                 </div>
             </div>
@@ -63,6 +61,15 @@
 </div>
 <script src="script/jquery-1.12.4.min.js"></script>
 <script src="script/script.js"></script>
+<script>
+    /* global $ */
+    $('#ALPKey').focus();
+
+    //Download the generated license file
+    $('#ALPDownload').click(function () {
+
+    });
+</script>
 </body>
 </html>
 

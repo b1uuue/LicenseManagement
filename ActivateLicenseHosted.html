@@ -40,7 +40,7 @@
                         <div class="alh-license-title">
                             <span>Please input your license key</span>
                         </div>
-                        <input type="text" class="alh-license-input" id="ALHLicenseInput" placeholder="xxx-xxxxxxxxxx-xxxxxx">
+                        <input type="text" class="alh-license-input" id="ALHLicenseInput" placeholder="xxx-xxxxxxxxxx-xxxxxx" maxlength="30">
                         <div class="alh-input-check" id="ALHInputCheck"></div>
                         <button class="yellow-btn" id="alh-active-btn">Active</button>
                         <div class="alh-notice" id="ALHNotice">
@@ -131,9 +131,9 @@
         }
     }
 
-    $('#ALHLicenseInput').focus();
-
-    $('#ALHLicenseInput').bind('keypress',function (event) {
+    let $keyInput = $('#ALHLicenseInput');
+    $keyInput.focus();
+    $keyInput.bind('keypress',function (event) {
         if(event.keyCode == 13){
             Active();
         }

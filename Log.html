@@ -20,8 +20,9 @@
                     <div class="log-display-content">Display Log</div>
                 </div>
                 <div class="log-control">
-                    <input type="text" class="log-export-path" placeholder="Select an export path">
-                    <div class="white-btn" id="LogChoosePath">Choose Path</div>
+                    <input type="text" class="log-export-path" id="LogPathInput" placeholder="Select an export path">
+                    <label for="LogChoosePath" class="white-btn">Choose Path</label>
+                    <input id="LogChoosePath" type="file" style="display:none;"/>
                     <div class="yellow-btn" id="LogExport">Export</div>
                 </div>
             </div>
@@ -31,6 +32,19 @@
 </div>
 <script src="script/jquery-1.12.4.min.js"></script>
 <script src="script/script.js"></script>
+<script>
+
+    $('#LogPathInput').focus();
+
+    $('#LogChoosePath').change(function () {
+        $('#LogPathInput').val($(this).val());
+    });
+
+    // log export
+    $('#LogExport').click(function () {
+
+    });
+</script>
 </body>
 </html>
 

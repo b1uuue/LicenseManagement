@@ -42,10 +42,17 @@ function timestampToDate(_timestamp) {
     let Y = _stamp.getUTCFullYear();
     let M = _stamp.getMonth() + 1 < 10 ? '0' + (_stamp.getMonth() + 1) : _stamp.getMonth() + 1;
     let D = _stamp.getDate() + 1 < 10 ? '0' + (_stamp.getDate() + 1) : _stamp.getDate() + 1;
-    console.log(Y, M, D);
     _date = Y + '-' + M + '-' + D;
     return _date;
 }
+//
+// $('#CheckBtn').click(function () {
+//     if ($(this).attr('class') === 'check-enable-btn'){
+//         $(this).removeClass('check-enable-btn').addClass('check-disable-btn');
+//     }else if ($(this).attr('class') === 'check-disable-btn') {
+//         $(this).removeClass('check-disable-btn').addClass('check-enable-btn');
+//     }
+// });
 
 
 
