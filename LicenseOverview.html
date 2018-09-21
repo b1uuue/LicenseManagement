@@ -110,7 +110,7 @@
             Go();
         }
     });
-    $page.on('input', function () {
+    $page.change(function (event) {
         let pb_int = $(this).val();
         $(this).val(Math.max(Math.min(pb_int, pageNum + 1), 1));
     });

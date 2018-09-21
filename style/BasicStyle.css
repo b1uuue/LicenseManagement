@@ -9,10 +9,15 @@
     font-size: 14px;
     text-align: center;
     cursor: pointer;
+    transition: 0.2s;
 }
 
 .white-btn:hover{
     background: #EEEEEE;
+}
+
+.white-btn:active{
+    background: #CCCCCC;
 }
 
 .yellow-btn {
@@ -27,13 +32,42 @@
     font-size: 14px;
     text-align: center;
     cursor: pointer;
+    transition: 0.2s;
 }
 
 .yellow-btn:hover{
     background: #ffa400;
 }
 
+.yellow-btn:active{
+    background: #ff9b1e;
+}
+
 .check-btn {
+    display: inline-block;
+    vertical-align: middle;
+    width: 50px;
+    height: 30px;
+    border-radius: 30px;
+    border: 1px solid #AAAAAA;
+    background: #AAAAAA;
+    cursor: pointer;
+    box-shadow: 1px 2px 10px #CCCCCC;
+    transition: 0.5s;
+}
+
+.check-btn::before{
+    margin: 1px 0 0 1px;
+    content: '';
+    display: block;
+    width: 26px;
+    height: 26px;
+    border-radius: 26px;
+    background: #FFFFFF;
+    transition: 0.3s;
+}
+
+input:checked + .check-btn{
     display: inline-block;
     vertical-align: middle;
     width: 50px;
@@ -45,30 +79,8 @@
     box-shadow: 1px 2px 10px #b4cdb2;
 }
 
-.check-btn::before{
-    margin: 1px 0 0 21px;
-    content: '';
-    display: block;
-    width: 26px;
-    height: 26px;
-    border-radius: 26px;
-    background: #FFFFFF;
-}
-
-input:checked + .check-btn{
-    display: inline-block;
-    vertical-align: middle;
-    width: 50px;
-    height: 30px;
-    border-radius: 30px;
-    border: 1px solid #AAAAAA;
-    background: #AAAAAA;
-    cursor: pointer;
-    box-shadow: 1px 2px 10px #CCCCCC;
-}
-
 input:checked + .check-btn::before{
-    margin: 1px 0 0 1px;
+    margin: 1px 0 0 21px;
     content: '';
     display: block;
     width: 26px;
@@ -252,6 +264,10 @@ input:checked + .check-btn::before{
     background: #EEEEEE;
 }
 
+.drop-list li{
+    transition: 0.3s;
+}
+
 .drop-list li:hover {
     background: #CCCCCC;
 }
@@ -267,6 +283,8 @@ input:checked + .check-btn::before{
     height: 60px;
     margin-left: auto;
     margin-right: auto;
+    border-bottom: 1px solid #DDDDDD;
+    background: #FFFFFF;
 }
 
 .ds-logo {
@@ -317,7 +335,14 @@ input:checked + .check-btn::before{
     width: 15px;
     height: 15px;
     margin-right: 16px;
-    background: url(../image/IconBlack.svg) no-repeat;
+}
+
+.left-bar .linkImage::before{
+    display: block;
+    content: '';
+    width: 15px;
+    height: 15px;
+    background: url(../image/Icon.svg) no-repeat;
 }
 
 .left-bar a span{
@@ -328,10 +353,12 @@ input:checked + .check-btn::before{
 .left-bar a:link {
     text-decoration: none;
     color: #606060;
+    transition: 0.2s;
 }
 
 .left-bar a:link .linkImage{
-    background: url(../image/IconBlack.svg) no-repeat;
+    transition: 0.2s;
+    background: #606060;
 }
 
 .left-bar a:visited {
@@ -339,7 +366,7 @@ input:checked + .check-btn::before{
 }
 
 .left-bar a:visited .linkImage{
-    background: url(../image/IconBlack.svg) no-repeat;
+    background: #606060;
 }
 
 .left-bar a:hover {
@@ -347,15 +374,7 @@ input:checked + .check-btn::before{
 }
 
 .left-bar a:hover .linkImage{
-    background: url(../image/IconYellow.svg) no-repeat;
-}
-
-.left-bar a:active {
-    color: #ffae38;
-}
-
-.left-bar a:active .linkImage{
-    background: url(../image/IconYellow.svg) no-repeat;
+    background: #ffae38;
 }
 
 .left-bar ul .lb-title {
@@ -631,9 +650,8 @@ input:checked + .check-btn::before{
     line-height: 70px;
 }
 
-.net-proxy-btn {
-    display: inline-block;
-    margin-left: 580px;
+.net-proxy label{
+    margin-left: 550px;
 }
 
 .net-information {
@@ -837,6 +855,7 @@ input:checked + .check-btn::before{
     padding: 0 15px;
     border: 1px solid #dddddd;
     border-radius: 3px;
+    color: #333333;
 }
 
 .alp-generate1 {

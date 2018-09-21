@@ -18,9 +18,8 @@
                 <div class="bm-content">
                     <div class="net-proxy">
                         <span class="title-note">Proxy Server Configuration</span>
-                        <div class="net-proxy-btn">
-                            <input type="checkbox">
-                        </div>
+                        <input type="checkbox" id="NetProxyBtn" style="display: none;">
+                        <label for="NetProxyBtn" class="check-btn"></label>
                     </div>
                     <div class="net-information">
                         <div class="info">
@@ -52,6 +51,7 @@
 <script src="script/jquery-1.12.4.min.js"></script>
 <script src="script/script.js"></script>
 <script>
+    /* global $ */
 
     $('#NetIp').focus();
 

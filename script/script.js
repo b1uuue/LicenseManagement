@@ -1,41 +1,41 @@
 //load header & leftBar
 $('#Header').load('header.html');
 $('#LeftBar').load('leftBar.html', function () {
-    if ($('#LicenseOverview').length > 0) {
+    if ($('#LicenseOverview').length) {
         $('#LBOverview').css('color', '#ffae38');
-        $('#LBOverview .linkImage').css('background-image', 'url(./image/IconYellow.svg)');
+        $('#LBOverview .linkImage').css('background', '#ffae38');
     }
-    if ($('#ActivateLicenseOnPremise').length || $('#ActiveLicenseHosted').length > 0) {
+    if ($('#ActivateLicenseOnPremise').length || $('#ActiveLicenseHosted').length) {
         $('#LBActivateLicense').css('color', '#ffae38');
-        $('#LBActivateLicense .linkImage').css('background-image', 'url(./image/IconYellow.svg)');
+        $('#LBActivateLicense .linkImage').css('background', '#ffae38');
     }
-    if ($('#MoveLicense').length > 0) {
+    if ($('#MoveLicense').length) {
         $('#LBMoveLicense').css('color', '#ffae38');
-        $('#LBMoveLicense .linkImage').css('background-image', 'url(./image/IconYellow.svg)');
+        $('#LBMoveLicense .linkImage').css('background', '#ffae38');
     }
-    if ($('#ServerNodesCentral').length > 0) {
+    if ($('#ServerNodesCentral').length) {
         $('#LBServerNodes').css('color', '#ffae38');
-        $('#LBServerNodes .linkImage').css('background-image', 'url(./image/IconYellow.svg)');
+        $('#LBServerNodes .linkImage').css('background', '#ffae38');
     }
-    if ($('#Network').length > 0) {
+    if ($('#Network').length) {
         $('#LBNetwork').css('color', '#ffae38');
-        $('#LBNetwork .linkImage').css('background-image', 'url(./image/IconYellow.svg)');
+        $('#LBNetwork .linkImage').css('background', '#ffae38');
     }
-    if ($('#Log').length > 0) {
+    if ($('#Log').length) {
         $('#LBLog').css('color', '#ffae38');
-        $('#LBLog .linkImage').css('background-image', 'url(./image/IconYellow.svg)');
+        $('#LBLog .linkImage').css('background', '#ffae38');
     }
-    if ($('#RegisteredDevices').length > 0) {
+    if ($('#RegisteredDevices').length) {
         $('#LBRegisteredDevices').css('color', '#ffae38');
-        $('#LBRegisteredDevices .linkImage').css('background-image', 'url(./image/IconYellow.svg)');
+        $('#LBRegisteredDevices .linkImage').css('background', '#ffae38');
     }
 });
 
 //transform timestamp
 function timestampToDate(_timestamp) {
     let _lenTime = _timestamp.length;
-    for (let i = 0; i < (13-_lenTime); i++) {
-        _timestamp*=10;
+    for (let i = 0; i < (13 - _lenTime); i++) {
+        _timestamp *= 10;
     }
     let _stamp = new Date(_timestamp);
     let _date;
@@ -45,14 +45,6 @@ function timestampToDate(_timestamp) {
     _date = Y + '-' + M + '-' + D;
     return _date;
 }
-//
-// $('#CheckBtn').click(function () {
-//     if ($(this).attr('class') === 'check-enable-btn'){
-//         $(this).removeClass('check-enable-btn').addClass('check-disable-btn');
-//     }else if ($(this).attr('class') === 'check-disable-btn') {
-//         $(this).removeClass('check-disable-btn').addClass('check-enable-btn');
-//     }
-// });
 
 
 

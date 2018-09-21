@@ -54,7 +54,7 @@
 <script src="script/jquery-1.12.4.min.js"></script>
 <script src="script/script.js"></script>
 <script>
-
+    /* global $ */
     let licenseObject, licenseNum, licenseIndex;
 
     function LicenseSelect(){
@@ -63,7 +63,6 @@
             let _licenseSelected = $('#MLDropButton');
             _licenseSelected.removeClass('d-button').addClass('drop-button');
             _licenseSelected.text($(this).text());
-            // console.log($('.drop-list li').index(this));
 
             for (let i = 0; i < licenseNum; i++) {
                 if (_licenseSelected.text() === licenseObject.license[i].licensekey){
