@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Activate License</title>
+    <link rel="stylesheet" href="style/Reset.css">
+    <link rel="stylesheet" href="style/BasicStyle.css">
+</head>
+<body>
+<div id="Header"></div>
+<div class="main">
+    <div class="main-container">
+        <div id="LeftBar" class="left-bar"></div
+        ><div class="basic-main">
+        <div class="bm-header">
+            <span class="bm-title">Activate License</span>
+        </div>
+        <div id="ActiveLicenseOnline">
+            <div class="bm-content">
+                <div class="alOn-note">
+                    <span class="title-note">Online Activation</span>
+                </div>
+                <div class="alh-license">
+                    <div class="alh-license-title">
+                        <span>Please input your license key</span>
+                    </div>
+                    <input type="text" class="alh-license-input" id="ALHLicenseInput" placeholder="xxx-xxxxxxxxxx-xxxxxx" maxlength="30">
+                    <div class="alh-input-check" id="ALHInputCheck"></div>
+                    <button class="yellow-btn" id="alh-active-btn">Activate</button>
+                    <div class="alh-notice" id="ALHNotice">
+                        <div class="card">
+                            <div class="notice-bulb"></div>
+                            <div class="paragraph">Note: Please find the license key in your email address used
+                                for<br>purchase.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="alh-card" id="ALHCard">
+                        <div class="card">
+                            <div>
+                                <span>License Key: </span>
+                                <span id="ALHKey">xxx-xxxxx-xxxxxxxxxx</span>
+                            </div>
+                            <div>
+                                <span>Product: </span>
+                                <span id="ALHProduct">Dynamsoft Barcode Reader</span>
+                            </div>
+                            <div>
+                                <span>Quota: </span>
+                                <span id="ALHQuota">100 devices</span>
+                            </div>
+                            <div>
+                                <span>Expiration Date: </span>
+                                <span id="ALHExpirationDate">2018-9-18</span>
+                            </div>
+                        </div>
+                    </div>
+                    <a class="white-btn" id="ALHView" href="LicenseOverview.html">
+                        View all the activated licenses
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div id="ActiveLicenseOffline">
+            <div class="bm-content">
+                <div class="alOff-note">
+                    <span class="title-note">Offline Activation</span>
+                </div>
+                <div class="alOff-generate1">
+                    <div class="sign">1</div>
+                    <span>Generate a license file with your license key</span>
+                    <p>Please log into Dynamsoft Customer Portal to generate a license file(.dslf).<br>You need a license key and the MAC address of your server.</p>
+                    <div class="alOff-mac">
+                        <span>The MAC address of your server: </span>
+                        <span id="ALOffMac">xxxx-xxxx-xxxx-xxxx</span>
+                    </div>
+                    <a href="#">proceed to the webpage ></a>
+                </div>
+                <div class="alOff-generate2">
+                    <div class="sign">2</div>
+                    <span>Activate with the generated license file</span>
+                    <div class="alOff-choose-file">
+                        <input type="text" id="ALOffFilePath" class="alOff-license-input" placeholder="Select a license (.dslf) file">
+                        <label for="ALOffChooseFile" class="white-btn">Choose File</label>
+                        <input id="ALOffChooseFile" type="file" accept=".dslf" style="display: none;"/>
+                        <div class="yellow-btn" id="ALOffActivate">Activate</div>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+    </div>
+</div>
+<script src="script/jquery-1.12.4.min.js"></script>
+<script src="script/script.js"></script>
+<script>
+    /* global $ */
+
+    let licenseObject, licenseNum;
+
+    $.ajax({
+        type: 'POST',
+        data: JSON.stringify({"method": "listlicense"}),
+        dataType: 'json',
+        url: 'https://127.0.0.1:8889/',
+        success: function (data) {
+            licenseObject = data;
+            licenseNum = data.license.length;
+        }
+    });
+
+    function Active(){
+        // if license not exist
+        let _licenseNotExist = 0;
+        for (let i = 0; i < licenseNum; i++) {
+            _licenseNotExist++;
+            let licenseText = $('#ALHLicenseInput').val();
+            //license exist
+            if (licenseText === licenseObject.license[i].licensekey) {
+                _licenseNotExist = 0;
+                //get expiration date
+                let _expirationDate = timestampToDate(licenseObject.license[i].activetime);
+                $('#ALHInputCheck').css({
+                    'display': 'inline-block',
+                    'background': 'url(./image/check_green.svg) no-repeat'
+                });
+                $('#ALHNotice').css('display', 'none');
+                $('#ALHCard').css('display', 'block');
+                $('#ALHKey').text(licenseObject.license[i].licensekey);
+                $('#ALHProduct').text(licenseObject.license[i].product);
+                $('#ALHQuota').text(licenseObject.license[i].quota);
+                $('#ALHExpirationDate').text(_expirationDate);
+                $('#ALHView').css('display', 'block');
+                break;
+            }
+        }
+        // license not exist
+        if (_licenseNotExist) {
+            $('#ALHInputCheck').css({
+                'display': 'inline-block',
+                'background': 'url(./image/close_red.svg) no-repeat'
+            });
+        }
+    }
+
+    let $keyInput = $('#ALHLicenseInput');
+    $keyInput.focus();
+    $keyInput.bind('keypress',function (event) {
+        if(event.keyCode === 13){
+            Active();
+        }
+    });
+
+    $('#alh-active-btn').click(function () {
+        Active();
+    });
+
+    $('#ALOffChooseFile').change(function () {
+        $('#ALOffFilePath').val($(this).val());
+    });
+
+    $('#ALOffActivate').click(function () {
+        $.ajax({
+            type: 'POST',
+            data: JSON.stringify({
+                "method": "importlfile",
+                'licensefile': $('#ALOffChooseFile').val()
+            }),
+            dataType: 'json',
+            url: 'https://127.0.0.1:8889/',
+            success: function (data) {
+                licenseObject = data;
+                licenseNum = data.license.length;
+            }
+        });
+    });
+
+</script>
+</body>
+</html>

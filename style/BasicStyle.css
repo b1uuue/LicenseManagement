@@ -3,7 +3,7 @@
     vertical-align: middle;
     border: 2px solid #aaaaaa;
     border-radius: 3px;
-    padding: 9px 24px;
+    padding: 9px 20px;
     background: #ffffff;
     color: #444444;
     font-size: 14px;
@@ -23,7 +23,6 @@
 .yellow-btn {
     display: inline-block;
     vertical-align: middle;
-    height: 36px;
     border: 1px solid #ffae38;
     border-radius: 3px;
     padding: 10px 25px;
@@ -779,6 +778,10 @@ input:checked + .check-btn::before{
     color: #999999;
 }
 
+.alh-license .yellow-btn{
+    width: 122px;
+}
+
 .alh-input-check{
     display: none;
     vertical-align: middle;
@@ -844,7 +847,7 @@ input:checked + .check-btn::before{
     color: #606060;
 }
 
-.alp-strong{
+.font-strong{
     font-weight: bold;
 }
 
@@ -889,6 +892,96 @@ input:checked + .check-btn::before{
 .alp-generate button{
     margin: 16px 0 30px 68px;
 }
+
+.alOn-note {
+    margin-top: 30px;
+}
+
+.alOff-note {
+    margin: 30px 0 40px 0;
+}
+
+.alOff-generate1{
+    color: #606060;
+    margin-left: 20px;
+}
+
+.alOff-generate1 .sign {
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: 16px;
+}
+
+.alOff-generate1 span{
+    display: inline-block;
+    vertical-align: middle;
+    font-size: 16px;
+}
+
+.alOff-generate1 p{
+    font-size: 14px;
+    margin: 10px 0 18px 45px;
+    line-height: 25px;
+}
+.alOff-generate1 .alOff-mac{
+    margin: 0 0 20px 45px;
+    font-weight: bold;
+}
+
+.alOff-generate1 a{
+    margin-left: 45px;
+    color: #50A8E1;
+    font-size: 14px;
+}
+
+.alOff-generate2{
+    margin: 35px 0 0 20px;
+    color: #606060;
+}
+
+.alOff-generate2 .sign{
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.alOff-generate2 span{
+    display: inline-block;
+    vertical-align: middle;
+    margin-left: 15px;
+    font-size: 16px;
+}
+
+.alOff-choose-file {
+    margin: 18px 0 30px 45px;
+}
+
+.alOff-license-input {
+    display: inline-block;
+    vertical-align: middle;
+    width: 325px;
+    height: 36px;
+    border-radius: 3px;
+    border: 1px solid #DDDDDD;
+    padding: 0 18px;
+    font-size: 14px;
+    color: #333333;
+}
+
+.alOff-license-input::placeholder{
+    color: #999999;
+}
+
+.alOff-choose-file .white-btn {
+    width: 125px;
+    margin: 0 15px 0 8px;
+}
+
+.alOff-choose-file .yellow-btn{
+    width: 122px;
+}
+
+
+
 
 
 

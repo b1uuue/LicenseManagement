@@ -42,7 +42,7 @@
                         </div>
                         <input type="text" class="alh-license-input" id="ALHLicenseInput" placeholder="xxx-xxxxxxxxxx-xxxxxx" maxlength="30">
                         <div class="alh-input-check" id="ALHInputCheck"></div>
-                        <button class="yellow-btn" id="alh-active-btn">Active</button>
+                        <button class="yellow-btn" id="alh-active-btn">Activate</button>
                         <div class="alh-notice" id="ALHNotice">
                             <div class="card">
                                 <div class="notice-bulb"></div>
@@ -135,12 +135,25 @@
     let $keyInput = $('#ALHLicenseInput');
     $keyInput.focus();
     $keyInput.bind('keypress',function (event) {
-        if(event.keyCode == 13){
+        if(event.keyCode === 13){
             Active();
         }
     });
 
-    $('#alh-active-btn').click(Active());
+    $('#alh-active-btn').click(function () {
+        Active();
+    });
+
+    $.ajax({
+        type: 'POST',
+        data: JSON.stringify({"method": "list"}),
+        dataType: 'json',
+        url: 'https://127.0.0.1:8889/',
+        success: function (data) {
+            licenseObject = data;
+            licenseNum = data.license.length;
+        }
+    });
 
 </script>
 </body>

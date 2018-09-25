@@ -22,7 +22,7 @@
                 <div class="log-control">
                     <input type="text" class="log-export-path" id="LogPathInput" placeholder="Select an export path">
                     <label for="LogChoosePath" class="white-btn">Choose Path</label>
-                    <input id="LogChoosePath" type="file" style="display:none;"/>
+                    <input id="LogChoosePath" type="file" name="savePath" style="display:none;"/>
                     <div class="yellow-btn" id="LogExport">Export</div>
                 </div>
             </div>
@@ -33,11 +33,13 @@
 <script src="script/jquery-1.12.4.min.js"></script>
 <script src="script/script.js"></script>
 <script>
-
+/* global $ */
     $('#LogPathInput').focus();
 
-    $('#LogChoosePath').change(function () {
+    $('#LogChoosePath').change(function (e) {
         $('#LogPathInput').val($(this).val());
+        // for (let entry of e.target.files)
+        //     console.log(entry.name, entry.webkitRelativePath);
     });
 
     // log export

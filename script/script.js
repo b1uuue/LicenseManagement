@@ -5,7 +5,7 @@ $('#LeftBar').load('leftBar.html', function () {
         $('#LBOverview').css('color', '#ffae38');
         $('#LBOverview .linkImage').css('background', '#ffae38');
     }
-    if ($('#ActivateLicenseOnPremise').length || $('#ActiveLicenseHosted').length) {
+    if ($('#ActivateLicenseOnPremise').length || $('#ActiveLicenseHosted').length || $('#ActiveLicenseOnline').length) {
         $('#LBActivateLicense').css('color', '#ffae38');
         $('#LBActivateLicense .linkImage').css('background', '#ffae38');
     }
