@@ -100,8 +100,6 @@
 
     let formObject, pageNum, pageBuffer, lineLes;
 
-    $('#SNCIp').focus();
-
     $('#SNCConnect').click(function () {
         // test connectivity
     });
@@ -153,7 +151,21 @@
         }
     });
 
-    $('#SNCentral').val()
+    $('#SNCIp').attr('disabled','disabled');
+    $('#SNCPort').attr('disabled','disabled');
+    $('#SNCName').attr('disabled','disabled');
+    $('#SNCentral').change(function () {
+        if ($(this).is(':checked')){
+            $('#SNCIp').removeAttr('disabled');
+            $('#SNCPort').removeAttr('disabled');
+            $('#SNCName').removeAttr('disabled');
+            $('#SNCIp').focus();
+        } else if(!$(this).is(':checked')){
+            $('#SNCIp').attr('disabled','disabled');
+            $('#SNCPort').attr('disabled','disabled');
+            $('#SNCName').attr('disabled','disabled');
+        }
+    });
 
 </script>
 </body>

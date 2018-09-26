@@ -11,44 +11,45 @@
     <div class="main-container">
         <div id="LeftBar" class="left-bar"></div
         ><div class="basic-main">
-            <div class="bm-header">
-                <span class="bm-title">Move License</span>
-            </div>
-            <div id="MoveLicense">
-                <div class="bm-content">
-                    <div class="ml-note">
-                        <span class="title-note">Please select a license key</span>
+        <div class="bm-header">
+            <span class="bm-title">Move License</span>
+        </div>
+        <div id="MoveLicense">
+            <div class="bm-content">
+                <div id="Hid" style="position: absolute; margin-left: 516px; width: 460px; height: 480px;"></div>
+                <div class="ml-note">
+                    <span class="title-note">Please select a license key</span>
+                </div>
+                <div class="ml-license-select" >
+                    <div class="drop">
+                        <div class="drop-button" id="MLDropButton">xxxx-xxxxxxxx-xxxxx-xxxxxxxx</div>
+                        <ul class="drop-list"></ul>
                     </div>
-                    <div class="ml-license-select" >
-                        <div class="drop">
-                            <div class="drop-button" id="MLDropButton">xxxx-xxxxxxxx-xxxxx-xxxxxxxx</div>
-                            <ul class="drop-list"></ul>
+                </div>
+                <div class="ml-card">
+                    <div class="card">
+                        <div>
+                            <span>License Key:</span>
+                            <span class="ml-card-key" id="MLCardKey">xxxx-xxxxxxxx-xxxxx-xxxxxxxx</span>
+                        </div>
+                        <div>
+                            <span>Expiration Date:</span>
+                            <span class="ml-card-date" id="MLCardDate">xxxx-xx-xx</span>
+                        </div>
+                        <div>
+                            <span>Product and Type:</span>
+                            <span class="ml-card-type" id="MLCardType">DBR Development License</span>
                         </div>
                     </div>
-                    <div class="ml-card">
-                        <div class="card">
-                            <div>
-                                <span>License Key:</span>
-                                <span class="ml-card-key" id="MLCardKey">xxxx-xxxxxxxx-xxxxx-xxxxxxxx</span>
-                            </div>
-                            <div>
-                                <span>Expiration Date:</span>
-                                <span class="ml-card-date" id="MLCardDate">xxxx-xx-xx</span>
-                            </div>
-                            <div>
-                                <span>Product and Type:</span>
-                                <span class="ml-card-type" id="MLCardType">DBR Development License</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="ml-unbind">
-                        <button class="white-btn" id="MLUnbindBtn">Unbind from this server</button>
-                        <div class="ml-unbind-bulb"></div>
-                        <div class="ml-unbind-note">Note: Network mandatory</div>
-                    </div>
+                </div>
+                <div class="ml-unbind">
+                    <button class="white-btn" id="MLUnbindBtn">Unbind from this server</button>
+                    <div class="ml-unbind-bulb"></div>
+                    <div class="ml-unbind-note">Note: Network mandatory</div>
                 </div>
             </div>
         </div>
+    </div>
     </div>
 </div>
 <script src="script/jquery-1.12.4.min.js"></script>
@@ -63,7 +64,6 @@
             let _licenseSelected = $('#MLDropButton');
             _licenseSelected.removeClass('d-button').addClass('drop-button');
             _licenseSelected.text($(this).text());
-
             for (let i = 0; i < licenseNum; i++) {
                 if (_licenseSelected.text() === licenseObject.license[i].licensekey){
                     licenseIndex = i;
@@ -77,7 +77,6 @@
             }
         });
     }
-
     $.ajax({
         type: 'POST',
         data: JSON.stringify({"method": "listlicense"}),
@@ -91,26 +90,30 @@
                 _list.append('<li>' + licenseObject.license[i].licensekey+ '</li>')
             }
             LicenseSelect();
-            $('.drop-button').click(function () {
+            $('.drop-button').click(function (e) {
                 $('.drop-list').css('display','block');
                 $('#MLDropButton').removeClass('drop-button').addClass('d-button');
+                e.stopImmediatePropagation();
             });
         }
     });
-
-
     // unbind from this server
     $('#MLUnbindBtn').click(function () {
-
     });
 
+    $('#Hid').click(function () {
+        $('.drop-list').css('display', 'none');
+        $('#MLDropButton').removeClass('d-button').addClass('drop-button');
+    });
+    //is button
 
-
+    $('.main').click(function () {
+        $('.drop-list').css('display', 'none');
+        $('#MLDropButton').removeClass('d-button').addClass('drop-button');
+        console.log(1222222);
+    },false);
 
 
 </script>
 </body>
 </html>
-
-
-

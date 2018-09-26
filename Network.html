@@ -53,7 +53,6 @@
 <script>
     /* global $ */
 
-    $('#NetIp').focus();
 
     //Proxy Server Configuration test connected
     $('#NetSubmitTest').click(function () {
@@ -64,6 +63,25 @@
     $('#NetSubmitSave').click(function () {
 
     });
+
+    $('#NetIp').attr('disabled','disabled');
+    $('#NetName').attr('disabled','disabled');
+    $('#NetPassword').attr('disabled','disabled');
+    $('#NetPort').attr('disabled','disabled');
+    $('#NetProxyBtn').change(function () {
+        if ($(this).is(':checked')){
+            $('#NetIp').removeAttr('disabled');
+            $('#NetName').removeAttr('disabled');
+            $('#NetPassword').removeAttr('disabled');
+            $('#NetPort').removeAttr('disabled');
+            $('#NetIp').focus();
+        } else if(!$(this).is(':checked')){
+            $('#NetIp').attr('disabled','disabled');
+            $('#NetName').attr('disabled','disabled');
+            $('#NetPassword').attr('disabled','disabled');
+            $('#NetPort').attr('disabled','disabled');
+        }
+    })
 
 </script>
 </body>
